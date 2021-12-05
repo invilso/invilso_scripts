@@ -1,0 +1,20 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+    <head>
+        {% load static %}
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'global/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'global/css/templatemo.css' %}">
+        <link rel="stylesheet" href="{% static 'global/css/custom.css' %}">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+        <link rel="stylesheet" href="{% static 'global/css/fontawesome.min.css' %}">
+        {% block head %} {% endblock %}
+
+    </head>
+    <body>
+        {% block content %} {% endblock %}
+    </body>
+</html>
