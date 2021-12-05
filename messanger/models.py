@@ -6,4 +6,6 @@ class Message(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     receiver = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE, related_name='receiver')
     sender = models.ForeignKey(User, blank=True, null=True,  on_delete=models.SET_NULL)
+    def __str__(self) -> str:
+        return self.text
 # Create your models here.

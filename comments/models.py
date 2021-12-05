@@ -8,4 +8,6 @@ class Comment(models.Model):
     rating = models.IntegerField()
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    def __str__(self) -> str:
+        return self.text
 # Create your models here.
