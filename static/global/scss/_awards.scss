@@ -1,0 +1,133 @@
+/*-- 7. awards --*/
+.awards-area{
+    &.awards-bg{
+        min-height: 865px;
+        @media #{$lg}{
+            padding-bottom: 120px;
+            min-height: auto;
+        }
+        @media #{$md}{
+            padding-bottom: 120px;
+            min-height: auto;
+        }
+        @media #{$xs}{
+        min-height: auto;
+        padding-bottom: 120px;
+        }
+        @media #{$sm}{
+            padding-bottom: 90px;
+        }
+
+    }
+}
+.awards__title{
+    overflow: hidden;
+    &-icon{
+        float: left;
+        display: block;
+        margin-right: 25px;
+        @media #{$xs}{
+            float: unset;
+        }
+    }
+    & h2{
+        overflow: hidden;
+        margin-bottom: 0;
+        font-size: 60px;
+        color: $white;
+        letter-spacing: -2px;
+        font-family: $semiBold;
+        @media #{$md}{
+            font-size: 50px;
+        }
+        @media #{$xs}{
+            font-size: 40px;
+        }
+    }
+}
+.container-fluid {
+    &.awards-padding{
+        padding-left: 380px;
+        @media #{$laptop}{
+            padding-left: 100px;
+        }
+        @media #{$lg}{
+            padding-left: 48px;
+        }
+        @media #{$md}{
+            padding-left: 68px;
+        }
+        @media #{$xs}{
+            padding-left: 15px;
+        }
+        @media #{$sm}{
+            padding-left: 49px;
+        }
+    }
+}
+.row.awards-active{
+    & .col-xl-3:nth-child(odd){
+        margin-top: 40px;
+        @media #{$md}{
+            margin-top: 0px;
+        }
+        @media #{$xs}{
+            margin-top: 0;
+        }
+    }
+}
+.single__awards{
+    background: $white;
+    padding: 70px 45px;
+    @media #{$xs}{
+        padding: 40px 16px;
+    }
+    &-icon{
+        margin-bottom: 20px;
+        text-align: center;
+        & img{
+            display: inline-block;
+        }
+    }
+    & .awards-content{
+        & span{
+            font-size: 50px;
+            font-family: $light;
+            color: $theme-color;
+        }
+        & h6 {
+            font-size: 26px;
+            font-family: $semiBold;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.awards-active .slick-arrow {
+	position: absolute;
+	top: -182px;
+	right: 370px;
+	border: none;
+	background: none;
+	color: $white;
+	font-size: 40px;
+	padding: 0;
+	z-index: 9;
+	line-height: 1;
+    cursor: pointer;
+    @media #{$laptop}{
+        right: 150px;
+    }
+    @media #{$lg}{
+        right: 100px;
+    }
+    &.slick-prev{
+        right: 435px;
+        @media #{$laptop}{
+            right: 220px;
+        }
+        @media #{$lg}{
+            right: 175px;
+        }
+    }
+}

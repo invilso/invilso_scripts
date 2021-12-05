@@ -1,0 +1,198 @@
+/*-- 2. header --*/
+
+
+.transparent-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    &.sticky {
+        width: 100%;
+        position: fixed;
+        z-index: 9999;
+        background:  linear-gradient( 0deg, rgb(64,60,255) 0%, rgb(116,113,254) 100%);
+        background: -webkit-linear-gradient( 0deg, rgb(64,60,255) 0%, rgb(116,113,254) 100%);
+        padding-top: 15px;
+        padding-bottom: 15px;
+        box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
+        -webkit-box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
+        -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+        animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+        @media #{$lg}{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        @media #{$md}{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        @media #{$xs}{
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        @media #{$sm}{
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+}
+@media #{$md}{
+    .navbar-toggler {
+        padding: 8px;
+        border-radius: 2px;
+        border: 2px solid #ffffff;
+        width: 45px;
+        height: inherit;
+        position: absolute;
+        padding-bottom: 10px;
+        right: 0;
+        top: -35px;
+    }
+    .navbar-icon {
+        background: $white;
+        height: 3px;
+        width: 20px;
+        margin: auto;
+        margin: 0 4px;
+        display: block;
+        margin: auto;
+        margin-top: 3px;
+    }
+    ul.navbar-nav {
+        background:  linear-gradient( 0deg, rgb(64,60,255) 0%, rgb(116,113,254) 100%);
+        background: -webkit-linear-gradient( 0deg, rgb(64,60,255) 0%, rgb(116,113,254) 100%);
+        margin-top: 20px;
+    }
+}
+@media #{$xs}{
+    .navbar-toggler {
+        padding: 8px;
+        border-radius: 2px;
+        border: 2px solid #ffffff;
+        width: 45px;
+        height: inherit;
+        position: absolute;
+        padding-bottom: 10px;
+        right: 0;
+        top: -35px;
+    }
+    .navbar-icon {
+        background: $white;
+        height: 3px;
+        width: 20px;
+        margin: auto;
+        margin: 0 4px;
+        display: block;
+        margin: auto;
+        margin-top: 3px;
+    }
+    ul.navbar-nav {
+        background:  linear-gradient( 0deg, rgb(64,60,255) 0%, rgb(116,113,254) 100%);
+        background: -webkit-linear-gradient( 0deg, rgb(64,60,255) 0%, rgb(116,113,254) 100%);
+        margin-top: 20px;
+    }
+}
+.header{
+    @media #{$lg}{
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 50px;
+    }
+    @media #{$md}{
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 50px;
+    }
+    @media #{$sm}{
+        padding-left: 75px;
+        padding-right: 75px;
+        padding-top: 50px;
+    }
+    @media #{$xs}{
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 50px;
+    }
+    &__menu{
+        @media #{$md}{
+            text-align: left !important;
+        }
+        @media #{$xs}{
+            text-align: left !important;
+        }
+        & .navbar{
+            padding: 0;
+        }
+        & ul{
+            @media #{$md}{
+                padding: 20px;
+            }
+            @media #{$xs}{
+                padding: 20px;
+            }
+            & li.nav-item{
+                display: inline-block;
+                margin-left: 45px;
+                @media #{$lg}{
+                    margin-left: 38px;
+                }
+                @media #{$md}{
+                    margin-left: 0px;
+                }
+                @media #{$xs}{
+                    margin-left: 0px;
+                }
+                &.active{
+                    & a.nav-link{
+                        color: $white;
+                    }
+                }
+                & a.nav-link{
+                    color: $header-menu;
+                    font-size: 14px;
+                    font-family: $medium;
+                    padding: 0;
+                    @media #{$md}{
+                        padding: 10px;
+                        font-size: 16px;
+                    }
+                    @media #{$xs}{
+                        padding: 10px;
+                        font-size: 16px;
+                    }
+                }
+                &:hover{
+                    & > a.nav-link{
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    &__btn{
+        & .btn{
+            background: $header-btn-bg;
+            border-color: $header-btn-bg;
+            box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.2);
+            &:hover{
+                background: transparent;
+                border-color: $white;
+            }
+        }
+        &.second-b{
+            & .btn{
+                background: $theme-color;
+                border-color: $theme-color;
+                &:hover{
+                    background: transparent;
+                }
+            }
+        }
+    }
+    @media #{$laptop}{
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 40px;
+    }
+}

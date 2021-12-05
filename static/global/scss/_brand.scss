@@ -1,0 +1,18 @@
+/*-- 9. brand --*/
+
+.brand-area{
+    &.bg-height{
+        min-height: 295px;
+        background-position: center;
+        background-size: cover;
+    }
+}
+.brand-active{
+    & .single-brand{
+        text-align: center;
+        & img{
+            display: inline;
+
+        }
+    }
+}

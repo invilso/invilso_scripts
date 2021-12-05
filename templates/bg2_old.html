@@ -1,0 +1,56 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+    <head>
+        {% load static %}
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'global/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'global/css/templatemo.css' %}">
+        <link rel="stylesheet" href="{% static 'global/css/custom.css' %}">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+        <link rel="stylesheet" href="{% static 'global/css/fontawesome.min.css' %}">
+        {% block head %} {% endblock %}
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light shadow">
+            <div class="container d-flex justify-content-between align-items-center">
+    
+                <a class="navbar-brand text-success logo h1 align-self-center" href="{% block title2_url %} {% endblock %}">
+                    {% block title2 %} {% endblock %} Регистрация
+                </a>
+    
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                    <div class="flex-fill">
+                        
+                    </div>
+                    <div class="navbar align-self-center d-flex">
+                        <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                            <div class="input-group">
+                                <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control" id="inputModalSearch" name="search" placeholder="Search ...">
+                                        <button type="submit" class="input-group-text bg-success text-light">
+                                            <i class="fa fa-fw fa-search text-white"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                </div>
+    
+            </div>
+        </nav>
+        {% block content %} {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,82 @@
+/*-- 5. cta --*/
+
+.cta-bg{
+    background-position: center;
+    background-size: cover;
+}
+.cta-sm {
+    @media #{$xs}{
+        padding-top: 110px;
+    }
+}
+.section__title{
+    &.cta-title{
+        & h2{
+            font-size: 80px;
+            color: #ffffff;
+            font-family: "neutrif_prosemi_bold";
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 30px;
+            @media #{$lg}{
+                font-size: 70px;
+            }
+            @media #{$md}{
+                font-size: 50px;
+            }
+            @media #{$xs}{
+                font-size: 40px;
+            }
+        }
+        & p{
+            color: $slider-text;
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
+        & .cta-btn{
+            & .btn:first-child{
+                background: $theme-color;
+                border-color: $theme-color;
+                box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.2);
+                &:hover{
+                    background: transparent;
+                    border-color: $theme-color;
+                }
+            }
+            & .btn{
+                box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.2);
+                margin: 0 13px;
+                @media #{$sm}{
+                    margin: 0 8px;
+                }
+                &:first-child{
+                    @media #{$xs}{
+                        margin-bottom: 15px;
+                    }
+                    @media #{$sm}{
+                        margin-bottom: 0px;
+                    }
+                }
+                &:hover{
+                    border-color: $slider-text;
+                }
+            }
+        }
+    }
+}
+.cta__img{
+    & img{
+       @media #{$laptop}{
+            width: 100%;
+        }
+       @media #{$lg}{
+            width: 100%;
+        }
+       @media #{$md}{
+            width: 100%;
+        }
+       @media #{$xs}{
+            width: 100%;
+        }
+    }
+}

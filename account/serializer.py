@@ -1,15 +1,8 @@
 from rest_framework import serializers
 
 
-class ImageOwnerSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
-    username = serializers.CharField(max_length=100)
-
-
 class ProfileImageSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
     file = serializers.ImageField()
-    owner = ImageOwnerSerializer()
  
  
 class ProfileSerializer(serializers.Serializer):

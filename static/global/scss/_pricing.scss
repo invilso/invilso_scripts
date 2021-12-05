@@ -1,0 +1,110 @@
+/*-- 6. pricing --*/
+.pricing__box{
+    position: relative;
+    padding: 70px 68px 80px 68px;
+    @include transition(.3s);
+    @media #{$lg}{
+        padding: 70px 0px 80px 0px;
+    }
+    @media #{$xs}{
+        padding: 70px 30px 80px 30px;
+    }
+    @media #{$sm}{
+        padding: 70px 68px 80px 68px;
+    }
+    &::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $pricing;
+        z-index: -1;
+        @include transition(.3s);
+    }
+    &.p-bg{
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+    }
+    &-head{
+        & span{
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: $semiBold;
+            color: $white;
+            margin-bottom: 15px;
+            display: block;
+        }
+        & h5{
+            font-size: 50px;
+            color: $white;
+            margin-bottom: 30px;
+        }
+    }
+    &-body{
+        & p{
+            font-size: 16px;
+            color: $white;
+            margin-bottom: 0;
+            @media #{$lg}{
+                padding: 0 30px;
+            }
+        }
+    }
+    & .price-count{
+        & h2{
+            font-size: 40px;
+            font-family: $semiBold;
+            color: $white;
+            margin-bottom: 0;
+            & span{
+                font-size: 14px;
+                font-family: $regular;
+            }
+        }
+    }
+    &-btn{
+        & .btn{
+            background: $white;
+            color: $pricing-btn;
+            border-color: $white;
+            box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.2);
+            &:hover{
+                background: $heading-color;
+                border-color: $heading-color;
+                color: $white;
+            }
+        }
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-image: url(../../assets/img/pricing/price_shape.png);
+        width: 126px;
+        height: 260px;
+        z-index: -1;
+    }
+    &:hover::before{
+        opacity: .9;
+    }
+    &:hover{
+        box-shadow: 0px 16px 32px 0px rgba(255, 137, 65, 0.5);
+    }
+    &.active{
+        box-shadow: 0px 16px 32px 0px rgba(255, 137, 65, 0.5);
+        & .btn{
+            background: $heading-color;
+            border-color: $heading-color;
+            color: $white;
+        }
+        &::before{
+            opacity: .9;
+        }
+    }
+}
