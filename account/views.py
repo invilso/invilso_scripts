@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from account.serializer import UserSerializer
 from django.contrib.auth.models import User
 from rest_framework import permissions
