@@ -1,0 +1,245 @@
+{% extends "bg2.html" %}
+
+{% block title %}
+Просмотр профиля
+{% endblock %}
+
+{% block head %}
+{% load static %}
+    <style>
+        /* Form Style */
+        .form-horizontal {
+            background: #fff;
+            padding-bottom: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .form-horizontal .heading {
+            display: block;
+            font-size: 36px;
+            font-weight: 700;
+            padding: 35px 0;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 30px;
+        }
+        .form-horizontal .form-group {
+            padding: 0 40px;
+            margin: 0 0 25px 0;
+            position: relative;
+        }
+        .form-horizontal .form-control {
+            background: #f0f0f0;
+            border: none;
+            border-radius: 20px;
+            box-shadow: none;
+            padding: 0 20px 0 45px;
+            height: 40px;
+            transition: all 0.3s ease 0s;
+        }
+        .form-horizontal .form-control:focus {
+            background: #e0e0e0;
+            box-shadow: none;
+            outline: 0 none;
+        }
+        .form-horizontal .form-group i {
+            position: absolute;
+            top: 12px;
+            left: 60px;
+            font-size: 17px;
+            color: #c8c8c8;
+            transition: all 0.5s ease 0s;
+        }
+        .form-horizontal .form-control:focus + i {
+            color: #008ebd;
+        }
+        .form-horizontal .fa-question-circle {
+            display: inline-block;
+            position: absolute;
+            top: 12px;
+            right: 60px;
+            font-size: 20px;
+            color: #808080;
+            transition: all 0.5s ease 0s;
+        }
+        .form-horizontal .fa-question-circle:hover {
+            color: #000;
+        }
+        .form-horizontal .main-checkbox {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #4a46ce;
+            border-radius: 50%;
+            position: relative;
+            margin: 5px 0 0 5px;
+            border: 1px solid #4541d6;
+        }
+        .form-horizontal .main-checkbox label {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+        .form-horizontal .main-checkbox label:after {
+            content: "";
+            width: 10px;
+            height: 5px;
+            position: absolute;
+            top: 5px;
+            left: 4px;
+            border: 3px solid #fff;
+            border-top: none;
+            border-right: none;
+            background: transparent;
+            opacity: 0;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+        .form-horizontal .main-checkbox input[type="checkbox"] {
+            visibility: hidden;
+        }
+        .form-horizontal .main-checkbox input[type="checkbox"]:checked + label:after {
+            opacity: 1;
+        }
+        .form-horizontal .text {
+            float: left;
+            margin-left: 7px;
+            line-height: 20px;
+            padding-top: 5px;
+        }
+        .form-horizontal .btn {
+            float: right;
+            font-size: 14px;
+            color: #fff;
+            background: #4541d6;
+            border-radius: 30px;
+            padding: 10px 25px;
+            border: none;
+            text-transform: capitalize;
+            transition: all 0.5s ease 0s;
+        }
+        @media only screen and (max-width: 479px) {
+            .form-horizontal .form-group {
+                padding: 0 25px;
+            }
+            .form-horizontal .form-group i {
+                left: 45px;
+            }
+            .form-horizontal .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div id="main">
+            <div class="row" id="real-estates-detail">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <header class="panel-title">
+                                <div class="text-center">
+                                    <strong>Пользователь сайта  </strong>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="panel-body">
+                            <div class="text-center" id="author">
+                                {% if account.is_superuser %}
+                                    <small class="label label-warning">Создатель</small>
+                                    <br>
+                                {% elif account.is_staff %}
+                                    <small class="label label-warning">Администратор</small>
+                                    <br>
+                                {% endif %}
+                                {% if account.profile.photo %}
+                                    <img src="{{ MEDIA_URL }}{{ account.profile.photo.file }}" width="212" height="212" />
+                                {% else %}
+                                    <img src="https://brilliant24.ru/files/cat/template_01.png" width="212" height="212" />
+                                {% endif %}
+                                <h3>{{ account.username }}</h3>
+                                <small class="label label-warning">{{ account.profile.location }}</small>
+                                <p>{{ account.profile.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <button class="btn" id="detail-btn">О пользователе</button>
+                            <button class="btn" id="ctbnt">Написать</button>
+                            <button class="btn" id="ctbnt2">Изменить</button>
+                            
+                            <div id="myTabContent" class="tab-content">
+                                <hr />
+                                <div class="tab-pane fade active in" id="detail">
+                                    <h4>Информация о профиле</h4>
+                                    <table class="table table-th-block">
+                                        <tbody>
+                                            {% if account.profile.first_name %}
+                                                <tr>
+                                                    <td class="active">Имя:</td>
+                                                    <td>{{ account.profile.first_name }}</td>
+                                                </tr>
+                                            {% endif %}
+                                            {% if account.profile.last_name %}
+                                                <tr>
+                                                    <td class="active">Фамилия:</td>
+                                                    <td>{{ account.profile.last_name }}</td>
+                                                </tr>
+                                            {% endif %}
+                                            {% if account.profile.location %}
+                                                <tr>
+                                                    <td class="active">Местоположение:</td>
+                                                    <td>{{ account.profile.location }}</td>
+                                                </tr>
+                                            {% endif %}
+                                            {% if account.profile.email %}
+                                                <tr>
+                                                    <td class="active">E-mail:</td>
+                                                    <td>{{ account.profile.email }}</td>
+                                                </tr>
+                                            {% endif %}
+                                            {% if account.date_joined %}
+                                                <tr>
+                                                    <td class="active">Зарегистрирован:</td>
+                                                    <td>{{ account.date_joined }}</td>
+                                                </tr>
+                                            {% endif %}
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade active in" id="contact">
+                                    <form role="form-horizontal">
+                                        <h4>Ваше сообщение</h4>
+                                        <div id="summernote"></div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success" data-original-title="" title="" id='send'>Отправить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        const username = "{{ account.username }}"
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script src="{% static 'account/js/view.js' %}"></script>
+{% endblock %}

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block head %}
-{% load static %}
+    {% load static %}
     <style>
         /* Form Style */
         .form-horizontal {
@@ -171,5 +171,8 @@
         <!-- /.row -->
     </div>
     <!-- Scripts -->
+{% endblock %}
+
+{% block javascript %}
     <script src="{% static 'authentication/js/login.js' %}"></script>
 {% endblock %}

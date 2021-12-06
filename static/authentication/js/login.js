@@ -2,7 +2,7 @@ $(document).ready(function(){
     $( "#login" ).click(function() {
         $.ajax({
             type: "POST",
-            url: '../api/login/token/login',
+            url: window.location.protocol+'//'+window.location.host+'/api/login/token/login',
             cache: false,
             contentType: 'application/x-www-form-urlencoded',
             processData: false,
@@ -11,7 +11,7 @@ $(document).ready(function(){
             success: function(msg){
                 sessionStorage.setItem('auth_token', msg.auth_token)
                 sessionStorage.setItem('username', $("#inputEmail").val())
-                window.location.replace("..");
+                window.location.replace(window.location.protocol+'//'+window.location.host);
             },
             error: function(msg){
                 $("#error").attr('class', 'alert alert-danger')

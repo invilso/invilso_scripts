@@ -9,14 +9,14 @@ $(document).ready(function(){
         if (validateEmail($("#inputEmail").val()) || $("#inputEmail").val() == "") {
             $.ajax({
                 type: "POST",
-                url: '../api/auth/users/',
+                url: window.location.protocol+'//'+window.location.host+'/api/auth/users/',
                 cache: false,
                 contentType: 'application/x-www-form-urlencoded',
                 processData: false,
                 data: "username="+$("#inputLogin").val()+"&password="+$("#inputPassword").val()+"&email="+$("#inputEmail").val(),
                 dataType : 'json',
                 success: function(msg){
-                    window.location.replace("../authentication/login");
+                    window.location.replace(window.location.protocol+'//'+window.location.host+"/authentication/login");
                 },
                 error: function(msg){
                     $("#error").attr('class', 'alert alert-danger')
