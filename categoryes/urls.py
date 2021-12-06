@@ -6,7 +6,7 @@ app_name = "categoryes"
 
 urlpatterns = [
     path('api/categoryes', CategoryesView.as_view()),
-    path('api/category/int:pk>', CategoryView.as_view()),
+    path('api/category/<int:pk>', CategoryView.as_view()),
     path('api/subcategoryes', SubcategoryesView.as_view()),
-    path('api/subcategory/int:pk>', SubcategoryView.as_view()),
+    path('api/subcategory/<int:pk>', SubcategoryView.as_view()),
 ]

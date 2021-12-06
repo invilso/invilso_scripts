@@ -89,8 +89,7 @@
         <script src="{% static 'global/js/jquery.magnific-popup.min.js' %}"></script>
         <script src="{% static 'global/js/plugins.js' %}"></script>
         <script src="{% static 'global/js/main.js' %}"></script>
+        {% block javascript %}{% endblock %}
         <script src="{% static 'global/js/render_header.js' %}"></script>
-        {% block javascript %}
-        {% endblock %}
     </body>
 </html>

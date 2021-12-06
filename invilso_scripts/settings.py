@@ -106,6 +106,7 @@ DATABASES = {
         'PASSWORD' : config.Database.PASSWORD,
         'HOST' : config.Database.HOST,
         'PORT' : config.Database.PORT,
+        'ATOMIC_REQUESTS': True
     }
 }
 
