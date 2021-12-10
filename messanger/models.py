@@ -11,11 +11,13 @@ class Message(models.Model):
         return self.text
 
 class Dialog(models.Model):
-    name = models.CharField(max_length=150, null=True)
+    name = models.CharField(max_length=150, null=True, blank=True)
     members = ManyToManyField(User, related_name='members')
     messages = ManyToManyField(Message)
-    is_active = models.BooleanField()
+    is_active = models.BooleanField(default=True)
     is_private = models.BooleanField()
     def __str__(self) -> str:
         if self.name:
             return self.name
+        else:
+            return str(self.id)
