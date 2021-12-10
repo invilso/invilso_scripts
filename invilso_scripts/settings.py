@@ -55,6 +55,84 @@ INSTALLED_APPS = [
     'main'
 ]
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname}[{asctime}]: {name} > {funcName} || {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname}[{asctime}]: {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'file_warning': {
+            'level': 'WARNING',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['mail_admins', 'file_warning'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'messanger': {
+            'level': 'INFO',
+            'handlers': ['console', 'file_warning']
+        },
+        'account': {
+            'level': 'WARNING',
+            'handlers': ['console', 'file_warning']
+        },
+        'authentication': {
+            'level': 'INFO',
+            'handlers': ['console', 'file_warning']
+        },
+        'categoryes': {
+            'level': 'WARNING',
+            'handlers': ['console', 'file_warning']
+        },
+        'comments': {
+            'level': 'WARNING',
+            'handlers': ['console', 'file_warning']
+        },
+        'files': {
+            'level': 'WARNING',
+            'handlers': ['console', 'file_warning']
+        },
+        'main': {
+            'level': 'INFO',
+            'handlers': ['console', 'file_warning']
+        },
+        'photos': {
+            'level': 'WARNING',
+            'handlers': ['console', 'file_warning']
+        },
+        'posts': {
+            'level': 'INFO',
+            'handlers': ['console', 'file_warning']
+        }
+    }
+}
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',

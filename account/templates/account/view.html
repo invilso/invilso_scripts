@@ -151,6 +151,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="text-center" id="author">
+                                <h3>{{ account.username }}</h3>
                                 {% if account.is_superuser %}
                                     <small class="label label-warning">Создатель</small>
                                     <br>
@@ -163,7 +164,7 @@
                                 {% else %}
                                     <img src="https://brilliant24.ru/files/cat/template_01.png" width="212" height="212" />
                                 {% endif %}
-                                <h3>{{ account.username }}</h3>
+                                <br>
                                 <small class="label label-warning">{{ account.profile.location }}</small>
                                 <p>{{ account.profile.description }}</p>
                             </div>

@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- <link rel="manifest" href="site.webmanifest"> -->
-		<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'global/img/favicon.ico' %}">
         <!-- Place favicon.ico in the root directory -->
 
         <!-- CSS here -->
@@ -47,12 +47,28 @@
                                     <ul class="navbar-nav" id="categoryes-list">
                                     </ul>
                                 </div>
+                                
                             </nav>
+                            
                         </div>
+                        
                     </div>
                     <div class="col-xl-2 d-none d-xl-block">
                         <div class="header__btn text-right">
                             <a href="#" class="btn btn-login" id="button-login">Login</a>
+                            <!-- <div class="btn-group">
+                                <button type="button" class="btn btn-danger">Action</button>
+                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -89,7 +105,7 @@
         <script src="{% static 'global/js/jquery.magnific-popup.min.js' %}"></script>
         <script src="{% static 'global/js/plugins.js' %}"></script>
         <script src="{% static 'global/js/main.js' %}"></script>
-        {% block javascript %}{% endblock %}
         <script src="{% static 'global/js/render_header.js' %}"></script>
+        {% block javascript %}{% endblock %}
     </body>
 </html>

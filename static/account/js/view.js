@@ -1,22 +1,5 @@
 $(document).ready(function(){
     // $("#categoryes-list").html = 
-    $.ajax({
-        type: "GET",
-        url: window.location.protocol+'//'+window.location.host+'/categoryes/api/categoryes?format=json',
-        cache: false,
-        dataType : 'json',
-        success: function(msg){
-            let result = ''
-            for (let category of msg) {
-                result = result + `\n<li class="nav-item"><a class="nav-link" href="#" catId="${category.id}">${category.name}</a></li>`
-            }
-            $("#categoryes-list").html(result)
-            $('.nav-link').css('font-family', 'Rubik');
-        },
-        error: function(msg){
-            alert('Невозможно получить список категорий')
-        }
-    });
     if (sessionStorage.getItem('username')){
         if (sessionStorage.getItem('username') != username){
             $("#ctbnt2").css("display", "none");
@@ -80,6 +63,7 @@ $(document).ready(function(){
             let txt = {
                 "text": code,
                 "sender": sessionStorage.getItem('username'),
+                "token": sessionStorage.getItem('auth_token'),
                 "receiver": username
             }
             txt = JSON.stringify(txt);
@@ -92,15 +76,15 @@ $(document).ready(function(){
                 data: txt,
                 dataType : 'json',
                 success: function(msg){
-                    if (msg.status == 'ok'){
+                    if (msg.status == 'success'){
                         $('#summernote').summernote('reset')
                         alert('Отправлено.')
                     } else {
-                        alert('Сообщение не отправлено, попробуйте ещё раз.')
+                        alert(`Сообщение не отправлено, попробуйте ещё раз. (${msg.desc})`)
                     }
                 },
                 error: function(msg){
-                    alert('Сообщение не отправлено, попробуйте ещё раз.')
+                    alert(`Сообщение не отправлено, попробуйте ещё раз. (${msg.desc})`)
                 }
             });
         } else {

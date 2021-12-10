@@ -26,4 +26,4 @@ $(document).ready(function(){
         $("#button-login").attr('href', window.location.protocol+'//'+window.location.host+'/account/view/'+sessionStorage.getItem('username'))
     }
     $('#button-login').css('font-family', 'Rubik');
-});
+}); 

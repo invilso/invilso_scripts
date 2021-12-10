@@ -2,7 +2,7 @@ from django.urls import path
 from authentication.views import LoginView, RegistrationView
 # from .views import PaginatorView, StatsView
 
-app_name = "authentication"
+app_name = "authentification"
 # app_name will help us do a reverse look-up latter.
 
 urlpatterns = [
