@@ -57,6 +57,8 @@ $(document).ready(function(){
     });
     $('#summernote').summernote('reset')
     $('#summernote').summernote('fontName', 'Arial');
+    $('#summernote').summernote('fontSize', 12);
+    $('#summernote').summernote('foreColor', 'black');
     $("#send").on("click", function (){
         let code = $('#summernote').summernote('code')
         if (code != '<p><br></p>' && code != '<p><span style="font-family: Arial;">﻿</span><br></p>'){

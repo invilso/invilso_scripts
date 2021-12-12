@@ -16,15 +16,17 @@ class MessagesCreateAPI(ListView):
         response = createMessage(json.loads(request.body.decode('utf-8')))
         return JsonResponse(response)
 
-
+@method_decorator(csrf_exempt, name='dispatch')
 class DialogsGetAPI(ListView):
-    def get(self, request): 
-        return render(request, 'messanger/main.html')
+    def post(self, request): 
+        response = getDialogs(json.loads(request.body.decode('utf-8')), request)
+        return JsonResponse(response)
 
-
+@method_decorator(csrf_exempt, name='dispatch')
 class DialogGetAPI(ListView):
-    def get(self, request): 
-        return render(request, 'messanger/main.html')
+    def post(self, request): 
+        response = getDialog(json.loads(request.body.decode('utf-8')), request)
+        return JsonResponse(response)
 
 
 class DialogsView(ListView):

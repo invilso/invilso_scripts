@@ -131,6 +131,11 @@
                 padding: 10px 20px;
             }
         }
+        .profile-image {
+            border-radius: 110px; /* Радиус скругления */
+            /* border: 1px solid rgb(11, 57, 196); Параметры рамки */
+            box-shadow: 0 0 7px #666; /* Параметры тени */
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
@@ -160,9 +165,9 @@
                                     <br>
                                 {% endif %}
                                 {% if account.profile.photo %}
-                                    <img src="{{ MEDIA_URL }}{{ account.profile.photo.file }}" width="212" height="212" />
+                                    <img class="profile-image" src="{{ MEDIA_URL }}{{ account.profile.photo.file }}" width="212" height="206" />
                                 {% else %}
-                                    <img src="https://brilliant24.ru/files/cat/template_01.png" width="212" height="212" />
+                                    <img class="profile-image" src="https://brilliant24.ru/files/cat/template_01.png" width="212" height="206" />
                                 {% endif %}
                                 <br>
                                 <small class="label label-warning">{{ account.profile.location }}</small>

@@ -74,6 +74,11 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
+        'console_dbg': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
         'file_warning': {
             'level': 'WARNING',
             'class': 'logging.StreamHandler',
@@ -88,6 +93,10 @@ LOGGING = {
         'django': {
             'handlers': ['console'],
             'propagate': True,
+        },
+        'django.db.backends': {
+            'level': 'INFO',
+            'handlers': ['console_dbg'],
         },
         'django.request': {
             'handlers': ['mail_admins', 'file_warning'],
