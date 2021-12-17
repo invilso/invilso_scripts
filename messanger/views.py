@@ -31,7 +31,6 @@ class DialogGetAPI(ListView):
 
 class DialogsView(ListView):
     def get(self, request): 
-        logger.warning('mq')
         return render(request, 'messanger/main.html')
 
 class DialogView(ListView):
