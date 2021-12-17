@@ -1,9 +1,9 @@
 from django.urls import path
-# from .views import PaginatorView, StatsView
+from files.views import DownloadView
 
-app_name = "account"
+app_name = "files"
 # app_name will help us do a reverse look-up latter.
 
 urlpatterns = [
-    # path('api/create', PaginatorView.as_view(), name = 'main'),
+    path('download/<int:pk>', DownloadView.as_view(), name = 'download'),
 ]

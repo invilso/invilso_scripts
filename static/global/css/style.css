@@ -1323,28 +1323,28 @@ a.logo-link {
     z-index: 9999;
     background: linear-gradient(0deg, #403cff 0%, #7471fe 100%);
     background: -webkit-linear-gradient(0deg, #403cff 0%, #7471fe 100%);
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 0px;
     box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
     -webkit-box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
-    -webkit-animation: 200ms ease-in-out 0s normal none 1 running fadeInDown;
-    animation: 200ms ease-in-out 0s normal none 1 running fadeInDown; }
+    -webkit-animation: 100ms ease-in-out 0s normal none 1 running fadeInDown;
+    animation: 100ms ease-in-out 0s normal none 1 running fadeInDown; }
     @media only screen and (min-width: 992px) and (max-width: 1200px) {
       .transparent-header.sticky {
-        padding-top: 15px;
-        padding-bottom: 15px; } }
+        padding-top: 10px;
+        padding-bottom: 0px; } }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
       .transparent-header.sticky {
-        padding-top: 15px;
-        padding-bottom: 30px; } }
+        padding-top: 10px;
+        padding-bottom: 0px; } }
     @media (max-width: 767px) {
       .transparent-header.sticky {
-        padding-top: 5px;
-        padding-bottom: 5px; } }
+        padding-top: 10px;
+        padding-bottom: 0px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       .transparent-header.sticky {
         padding-top: 10px;
-        padding-bottom: 10px; } }
+        padding-bottom: 0px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .navbar-toggler {

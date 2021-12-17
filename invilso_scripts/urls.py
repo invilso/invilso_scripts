@@ -27,6 +27,7 @@ urlpatterns = [
     path('comments/', include('comments.urls', namespace = 'comments')),
     path('messanger/', include('messanger.urls', namespace = 'messanger')),
     path('photos/', include('photos.urls', namespace = 'photos')),
+    path('files/', include('files.urls', namespace = 'files')),
     path('categoryes/', include('categoryes.urls', namespace = 'categoryes')),
     path('', include('main.urls', namespace = 'main')),
     path('posts/', include('posts.urls', namespace = 'posts')),

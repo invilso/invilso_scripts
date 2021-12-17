@@ -8,4 +8,8 @@ class LoginView(ListView):
 class RegistrationView(ListView):
     def get(self, request):
         return render(request, 'authentication/registration.html')
+
+class LogoutView(ListView):
+    def get(self, request):
+        return render(request, 'authentication/logout.html')
 # Create your views here.

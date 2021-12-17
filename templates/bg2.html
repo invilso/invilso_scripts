@@ -12,7 +12,7 @@
         <!-- <link rel="manifest" href="site.webmanifest"> -->
 		<link rel="shortcut icon" type="image/x-icon" href="{% static 'global/img/favicon.ico' %}">
         <!-- Place favicon.ico in the root directory -->
-
+        
         <!-- CSS here -->
         <link rel="stylesheet" href="{% static 'global/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'global/css/animate.min.css' %}">
@@ -54,21 +54,9 @@
                         
                     </div>
                     <div class="col-xl-2 d-none d-xl-block">
-                        <div class="header__btn text-right">
-                            <a href="#" class="btn btn-login" id="button-login">Login</a>
-                            <!-- <div class="btn-group">
-                                <button type="button" class="btn btn-danger">Action</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                            </div> -->
+                        <div class="header__btn text-right" id="buttons-login-menu">
+                            
+                            <a href="#" class="btn btn-login" id="button-login" style="visibility: visible;">Login</a>
                         </div>
                     </div>
                 </div>
@@ -78,7 +66,7 @@
             <section class="breadcrumb-area breadcrumb-bg" data-background="{% static 'global/img/bg/breadc_bg.jpg' %}">
                 
             </section>
-            <section class="inner-blog pt-120 pt-70">
+            <section class="inner-blog pt-120 pt-70 mb-80">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -91,6 +79,84 @@
                     </div>
             </section>
         </main>
+        <footer class="footer__bg pt-20" data-background="{% static 'global/img/bg/footer_bg.jpg' %}">
+            <div class="container">
+                <div class="row mb-10">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="footer__widget mb-10">
+                            <div class="footer__widget-link">
+                                <div class="footer__widget-title mb-20">
+                                    <h4>Other Services</h4>
+                                </div>
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">HelperTools</a></li>
+                                    <li><a href="#">BanlistTool</a></li>
+                                    <li><a href="#">FractHelper</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-2 col-md-6 col-sm-6">
+                        <div class="footer__widget mb-10">
+                            <div class="footer__widget-link">
+                                <div class="footer__widget-title mb-20">
+                                    <h4>Resources</h4>
+                                </div>
+                                <ul>
+                                    
+                                    <li><a href="#">Политика конфиденциальности</a></li>
+                                    <li><a href="#">Лицензионное соглашение</a></li>
+                                    <li><a href="#">Согласие на обработку данных</a></li>
+                                    <li><a href="#">Политика возвратов платежей</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4">
+                        <div class="footer__widget mb-10">
+                            <div class="footer__widget-link">
+                                <div class="footer__widget-title mb-20">
+                                    <h4>Contacts</h4>
+                                </div>
+                                <ul>
+                                    <li><a href="mailto:invilsomail@gmail.com">invilsomail@gmail.com</a></li>
+                                    <li><a href="https://vk.com/invilso">VK</a></li>
+                                    <li><a href="https://t.me/invilso">Telegram</a></li>
+                                    <li><a href="https://vk.com/invilso_sc">VK Group</a></li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-4">
+                        <div class="footer__widget mb-10">
+                            <div class="footer__widget-link">
+                                <div class="footer__widget-title mb-55">
+                                    
+                                </div>
+                                <ul>
+                                    <li><a href="https://github.com/invilso">GitHub</a></li>
+                                    <li><a href="https://www.linkedin.com/in/artur-scherban-421715175/">LinkedIn</a></li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="copyright-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="copyright__text pt-35 pb-35 text-center">
+                                <p>Functional: INVILSO SCRIPTS</p>
+                                <p>Theme: BasicTheme</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         <!-- JS here -->
         <script src="{% static 'global/js/vendor/modernizr-3.5.0.min.js' %}"></script>
@@ -106,6 +172,10 @@
         <script src="{% static 'global/js/plugins.js' %}"></script>
         <script src="{% static 'global/js/main.js' %}"></script>
         <script src="{% static 'global/js/render_header.js' %}"></script>
+        <script>
+            let URL_MESSAGES = "{% url 'messanger:view' %}"
+            let URL_LOGOUT = "{% url 'authentication:logout' %}"
+        </script>
         {% block javascript %}{% endblock %}
     </body>
 </html>

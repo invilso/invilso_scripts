@@ -8,6 +8,6 @@ urlpatterns = [
     path('api/messages/create', MessagesCreateAPI.as_view()),
     path('api/dialogs/get', DialogsGetAPI.as_view()),
     path('api/dialog/get', DialogGetAPI.as_view()),
-    path('', DialogsView.as_view()),
+    path('', DialogsView.as_view(), name='view'),
     path('dialog/<int:pk>', DialogView.as_view()),
 ]

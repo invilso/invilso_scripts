@@ -1,7 +1,7 @@
 from django.urls import path
-# from .views import PaginatorView, StatsView
+# from comments.views import PaginatorView, StatsView
 
-app_name = "account"
+app_name = "comments"
 # app_name will help us do a reverse look-up latter.
 
 urlpatterns = [

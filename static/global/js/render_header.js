@@ -8,7 +8,7 @@ $(document).ready(function(){
         success: function(msg){
             let result = ''
             for (let category of msg) {
-                result = result + `\n<li class="nav-item"><a class="nav-link" href="#" catId="${category.id}">${category.name}</a></li>`
+                result = result + `\n<li class="nav-item"><a class="nav-link" href="${window.location.protocol}//${window.location.host}/categoryes/${category.id}" cat-id="${category.id}">${category.name}</a></li>`
             }
             $("#categoryes-list").html(result)
             $('.nav-link').css('font-family', 'Rubik');
@@ -21,9 +21,21 @@ $(document).ready(function(){
     if (!sessionStorage.getItem('username')){
         $("#button-login").text('Войти')
         $("#button-login").attr('href', window.location.protocol+'//'+window.location.host+'/authentication/login')
+        $('#button-login').css('font-family', 'Rubik'); 
     } else {
-        $("#button-login").text('Профиль')
-        $("#button-login").attr('href', window.location.protocol+'//'+window.location.host+'/account/view/'+sessionStorage.getItem('username'))
+        $('#buttons-login-menu').html(`<div class="btn-group" style="margin-top:-20px">
+            <button type="button" class="btn" style="font-family:Rubik">Меню</button>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Меню</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="${window.location.protocol}//${window.location.host}/account/view/${sessionStorage.getItem('username')}">Профиль</a>
+                <a class="dropdown-item" href="${URL_MESSAGES}">Сообщения</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="${URL_LOGOUT}">Выйти</a>
+            </div>
+        </div>`)
+        $('#div-menu').css('maggin-top', '-20px'); 
     }
-    $('#button-login').css('font-family', 'Rubik'); 
+   
 }); 

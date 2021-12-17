@@ -1,9 +1,11 @@
 from django.urls import path
-# from .views import PaginatorView, StatsView
+from posts.views import PostView
 
-app_name = "account"
+app_name = "posts"
 # app_name will help us do a reverse look-up latter.
 
 urlpatterns = [
-    # path('api/create', PaginatorView.as_view(), name = 'main'),
+    # path('api/post/create', MessagesCreateAPI.as_view()),
+    # path('api/post/get', DialogGetAPI.as_view()),
+    path('<int:pk>', PostView.as_view(), name='view'),
 ]

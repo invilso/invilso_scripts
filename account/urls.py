@@ -8,6 +8,6 @@ app_name = "account"
 urlpatterns = [
     path('api/users', UsersView.as_view()),
     path('api/users/<str:username>', UserView.as_view()),
-    path('view/<str:username>', ProfileView.as_view()),
+    path('view/<str:username>', ProfileView.as_view(), name = 'view'),
     path('edit/<str:username>', UserView.as_view()),
 ]
