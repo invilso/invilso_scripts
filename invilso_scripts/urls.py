@@ -33,4 +33,5 @@ urlpatterns = [
     path('posts/', include('posts.urls', namespace = 'posts')),
     path('help/', include('aboutme.urls', namespace = 'help')),
     path('authentication/', include('authentication.urls', namespace = 'authentication')),
+    path('billing/', include('payments.urls', namespace = 'payments')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

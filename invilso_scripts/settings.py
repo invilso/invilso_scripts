@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 MEDIA_ROOT = 'uploads/'
 LOGIN_REDIRECT_URL = '/'
 
+LIQPAY_PUBLIC_KEY = config.Payment.PUBLIC_KEY
+LIQPAY_PRIVATE_KEY = config.Payment.PRIVATE_KEY
+
 # Application definition
 
 INSTALLED_APPS = [
