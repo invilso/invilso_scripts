@@ -109,7 +109,7 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console'],
+            'handlers': ['console', 'file_warning', 'file', 'file_error'],
             'propagate': True,
         },
         'django.db.backends': {
@@ -117,7 +117,7 @@ LOGGING = {
             'handlers': ['console_dbg'],
         },
         'django.request': {
-            'handlers': ['mail_admins', 'file_warning'],
+            'handlers': ['console', 'file_warning', 'file', 'file_error'],
             'level': 'ERROR',
             'propagate': False,
         },

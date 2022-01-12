@@ -8,7 +8,6 @@ from rest_framework.authtoken.models import Token
 
 def createComment(input: dict) -> dict:
     """ Creation of a comment in a post. Depending on the context of the request. """
-    print(type(input['rating']))
     if input['text'] and input['receiver'] and input['sender'] and input['token'] != None and type(input['rating']) == int:
         if input['rating'] > 0 and input['rating'] < 6:
             sender = User.objects.get(username=input['sender'])     
