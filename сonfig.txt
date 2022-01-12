@@ -1,0 +1,14 @@
+SECRET_KEY = ''
+
+class Database():
+    ENGINE = ''
+    NAME = ''
+    USER = ''
+    PASSWORD = ''
+    HOST = ''
+    PORT = ''
+
+class Payment():
+    PUBLIC_KEY = ''
+    PRIVATE_KEY = ''
+    
