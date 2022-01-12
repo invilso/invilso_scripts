@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import logging
 from pathlib import Path
 import config
 import os
@@ -83,10 +84,23 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
-        'file_warning': {
+        'file_warning': { 
             'level': 'WARNING',
-            'class': 'logging.StreamHandler',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/warning.log',
             'formatter': 'verbose'
+        },
+        'file_error': { 
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/error.log',
+            'formatter': 'verbose'
+        },
+        'file': { 
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/info.log',
+            'formatter': 'simple'
         },
         'mail_admins': {
             'level': 'ERROR',
@@ -109,39 +123,43 @@ LOGGING = {
         },
         'messanger': {
             'level': 'INFO',
-            'handlers': ['console', 'file_warning']
+            'handlers': ['console', 'file_warning', 'file', 'file_error']
+        },
+        'exception_handler': {
+            'level': 'INFO',
+            'handlers': ['console', 'file_warning', 'file', 'file_error']
         },
         'account': {
             'level': 'WARNING',
-            'handlers': ['console', 'file_warning']
+            'handlers': ['console', 'file_warning', 'file', 'file_error']
         },
         'authentication': {
             'level': 'INFO',
-            'handlers': ['console', 'file_warning']
+            'handlers': ['console', 'file_warning', 'file', 'file_error']
         },
         'categoryes': {
             'level': 'WARNING',
-            'handlers': ['console', 'file_warning']
+            'handlers': ['console', 'file_warning', 'file', 'file_error']
         },
         'comments': {
             'level': 'WARNING',
-            'handlers': ['console', 'file_warning']
+            'handlers': ['console', 'file_warning', 'file', 'file_error']
         },
         'files': {
             'level': 'WARNING',
-            'handlers': ['console', 'file_warning']
+            'handlers': ['console', 'file_warning', 'file', 'file_error']
         },
         'main': {
             'level': 'INFO',
-            'handlers': ['console', 'file_warning']
+            'handlers': ['console', 'file_warning', 'file', 'file_error']
         },
         'photos': {
             'level': 'WARNING',
-            'handlers': ['console', 'file_warning']
+            'handlers': ['console', 'file_warning', 'file', 'file_error']
         },
         'posts': {
             'level': 'INFO',
-            'handlers': ['console', 'file_warning']
+            'handlers': ['console', 'file_warning', 'file', 'file_error']
         }
     }
 }
@@ -162,6 +180,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'invilso_scripts.middleware.exception.ExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'invilso_scripts.urls'

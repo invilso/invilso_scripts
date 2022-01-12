@@ -14,27 +14,32 @@ logger = logging.getLogger(__name__)
 class MessagesCreateAPI(ListView):
     def post(self, request):
         response = createMessage(json.loads(request.body.decode('utf-8')))
+        logger.debug('Создано сообщение')
         return JsonResponse(response)
 
 @method_decorator(csrf_exempt, name='dispatch')
 class DialogsGetAPI(ListView):
     def post(self, request): 
         response = getDialogs(json.loads(request.body.decode('utf-8')), request)
+        logger.debug('Получен список диалогов')
         return JsonResponse(response)
 
 @method_decorator(csrf_exempt, name='dispatch')
 class DialogGetAPI(ListView):
     def post(self, request): 
         response = getDialog(json.loads(request.body.decode('utf-8')), request)
+        logger.debug('Получены сообщения')
         return JsonResponse(response)
 
 
 class DialogsView(ListView):
     def get(self, request): 
+        logger.debug('Открыта главная сообщений')
         return render(request, 'messanger/main.html')
 
 class DialogView(ListView):
     def get(self, request): 
+        
         return render(request, 'messanger/dialog.html')
     
 

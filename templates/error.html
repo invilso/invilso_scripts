@@ -1,0 +1,30 @@
+{% extends "bg2.html" %}
+
+{% block title %}
+500 Internal Error
+{% endblock %}
+
+{% block head %}
+<style>
+    h1 {
+        font-family: "Rubik";
+        font-size: large;
+    }
+    .centered-text {
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="centered-text">
+<h1 class="h1" style="font-size: 250px;">500</h1>
+<h2>На сервере произошла ошибка. Сообщите о ней по любому из контактов, которые указаны ниже.</h2>
+<h3>Укажите точное время когда случилась ошибка.</h3>
+<h4>Краткое описание ошибки: {{exception}}</h4>
+
+</div>
+{% endblock %}
+
