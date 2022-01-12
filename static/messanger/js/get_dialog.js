@@ -64,6 +64,7 @@ function getDialog(d_id) {
             if (msg.status == 'success'){
                 let dialog_info = createDialogNameAndPhoto(msg.data)
                 $('#name-dialog').text(dialog_info.name)
+                // $('#reload-icon').css()
                 let result = ''
                 for (let message of msg.data.messages) {
                     if (message.sender.username != sessionStorage.getItem('username')){
@@ -108,7 +109,7 @@ function initSummernote() {
     $('#summernote').summernote({
         height: 130,
         toolbar: [
-          ['style', ['bold', 'italic', 'clear']],
+          ['style', ['bold', 'italic']],
           ['font', ['fontname', 'strikethrough', 'color']],
           ['para', ['ul', 'ol', 'paragraph', 'height']],
           ['insert', ['picture', 'link', 'video']],
@@ -135,6 +136,7 @@ function initSummernote() {
               ['insert', ['link', 'picture']]
             ]
         },
+        lang: 'ru-RU',
         lineHeights: ['0.5', '1.0'],
         placeholder: 'Писать тут',
         fontNames: ['Arial', 'Arial Black', 'Times New Roman'],
@@ -153,5 +155,9 @@ $(document).ready(function(){
     $('#btn-send').css({'font-family': "Rubik"})
     $('#btn-send').on("click", function (){
         sendMessage($('#summernote').summernote('code'), current_dialog)
+    });
+    $('#reload-icon').on("click", function (){
+        getDialog(current_dialog)
+        alert('Обновлено')
     });
 });

@@ -1,7 +1,7 @@
 {% extends "bg2.html" %}
 
 {% block title %}
-Просмотр профиля
+Просмотр профиля {{ account.username }}
 {% endblock %}
 
 {% block head %}
@@ -138,7 +138,10 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'global/css/summernote.css' %}"/>
+    <!-- <script src="{% static 'global/css/summernote.css' %}"></script> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> -->
+    
 {% endblock %}
 
 {% block content %}
@@ -246,6 +249,7 @@
     <script>
         const username = "{{ account.username }}"
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script src="{% static 'global/js/summernote.js' %}"></script>
+    <script src="{% static 'global/lang/summernote-ru-RU.min.js' %}"></script>
     <script src="{% static 'account/js/view.js' %}"></script>
 {% endblock %}

@@ -8,5 +8,5 @@ class Comment(models.Model):
     rating = models.IntegerField()
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     def __str__(self) -> str:
-        return self.text
+        return self.owner.username+" || "+self.text
 # Create your models here.

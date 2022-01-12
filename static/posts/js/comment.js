@@ -1,24 +1,26 @@
 function updateSummernoteStatus() {
     $('#summernote').summernote('reset')
     $('#summernote').summernote('fontName', 'Arial');
-    $('#summernote').summernote('fontSize', 14);
+    $('#summernote').summernote('fontSize', 18);
     $('#summernote').summernote('foreColor', 'black');
-    $('#summernote').summernote('lineHeight', 0.5);
+    $('#summernote').summernote('color', 'black');
+    $('#summernote').summernote('lineHeight', 1);
 }
 
-function sendMessage(message, dialog) {
+function sendComment(message, post) {
     let code = message
     if (code != '<p><br></p>' && code != '<p><span style="font-family: Arial; font-size: 12px;"><font color="#000000">﻿</font></span><br></p>'){
         let txt = {
             "text": code,
             "sender": sessionStorage.getItem('username'),
             "token": sessionStorage.getItem('auth_token'),
-            "receiver": dialog
+            "rating": Number(2),
+            "receiver": Number(post)
         }
         txt = JSON.stringify(txt);
         $.ajax({
             type: "POST",
-            url: window.location.protocol+'//'+window.location.host+'/messanger/api/messages/create',
+            url: window.location.protocol+'//'+window.location.host+'/comments/api/comments/create',
             cache: false,
             contentType: 'application/json',
             processData: false,
@@ -27,7 +29,7 @@ function sendMessage(message, dialog) {
             success: function(msg){
                 if (msg.status == 'success'){
                     $('#summernote').summernote('reset')
-                    updateSummernoteStatus()
+                    location.reload();
                 } else {
                     alert(`Сообщение не отправлено, попробуйте ещё раз. (${msg.desc})`)
                 }
@@ -81,38 +83,14 @@ function initSummernote() {
     updateSummernoteStatus()
 }
 
-
-
 $(document).ready(function(){
-    // $("#categoryes-list").html = 
-    if (sessionStorage.getItem('username')){
-        if (sessionStorage.getItem('username') != username){
-            $("#ctbnt2").css("display", "none");
-        } else {
-            $("#ctbnt").css("display", "none");
-        }
-    } else {
-        $("#ctbnt").css("display", "none");
-        $("#ctbnt2").css("display", "none");
-    }
-    $("#contact").css("display", "none");
-    $("#ctbnt").on("click", function (){
-        console.log('b')
-        $("#detail").css("display", "none");
-        $("#contact").css("display", "block");
-    } );
-    $("#detail-btn").on("click", function (){
-        console.log('a')
-        $("#contact").css("display", "none");
-        $("#detail").css("display", "block");
-    });
+    $('#summer').css({'visibility': "hidden"})
     initSummernote()
-    $("#send").on("click", function (){
-        let code = $('#summernote').summernote('code')
-        sendMessage(code, username)
+    if (sessionStorage.getItem('username')) {
+        $('#summer').css({'visibility': "visible"})
+    }
+    $('#send').css({'font-family': "Rubik"})
+    $('#send').on("click", function (){
+        sendComment($('#summernote').summernote('code'), POST_ID)
     });
-    $('#detail-btn').css('font-family', 'Rubik');
-    $('#ctbnt').css('font-family', 'Rubik');
-    $('#ctbnt2').css('font-family', 'Rubik');
-    $('#send').css('font-family', 'Rubik');
 });

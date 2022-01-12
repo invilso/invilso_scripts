@@ -1,9 +1,9 @@
 from django.urls import path
-# from comments.views import PaginatorView, StatsView
+from comments.views import CommentCreateAPI
 
 app_name = "comments"
 # app_name will help us do a reverse look-up latter.
 
 urlpatterns = [
-    # path('api/create', PaginatorView.as_view(), name = 'main'),
+    path('api/comments/create', CommentCreateAPI.as_view()),
 ]

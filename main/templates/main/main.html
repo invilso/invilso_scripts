@@ -553,7 +553,7 @@ INVILSO SCRIPTS
                                     </ul>
                                 </div>
                                 <h2><a href="{% url 'posts:view' pk=post.id %}">{{post.title}}</a></h2>
-                                <p>{{ post.text|truncatewords_html:50 }}</p>
+                                {{ post.text|truncatewords_html:50 | safe }}
                             </div>
                         </div>
                     {% endif %}

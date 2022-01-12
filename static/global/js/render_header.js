@@ -23,19 +23,36 @@ $(document).ready(function(){
         $("#button-login").attr('href', window.location.protocol+'//'+window.location.host+'/authentication/login')
         $('#button-login').css('font-family', 'Rubik'); 
     } else {
-        $('#buttons-login-menu').html(`<div class="btn-group" style="margin-top:-20px">
-            <button type="button" class="btn" style="font-family:Rubik">Меню</button>
-            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Меню</span>
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="${window.location.protocol}//${window.location.host}/account/view/${sessionStorage.getItem('username')}">Профиль</a>
-                <a class="dropdown-item" href="${URL_MESSAGES}">Сообщения</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="${URL_LOGOUT}">Выйти</a>
-            </div>
-        </div>`)
-        $('#div-menu').css('maggin-top', '-20px'); 
+        let staff_button = ''
+        $.ajax({
+            type: "GET",
+            url: window.location.protocol+'//'+window.location.host+'/account/api/users/'+sessionStorage.getItem('username')+'?format=json',
+            cache: false,
+            dataType : 'json',
+            success: function(msg){
+                if (msg.is_staff){
+                    staff_button = `<a class="dropdown-item" href="">Создать пост</a>`
+                }
+                $('#buttons-login-menu').html(`<div class="btn-group" style="margin-top:-20px">
+                    <button type="button" class="btn" style="font-family:Rubik">Меню</button>
+                    <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Меню</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="${window.location.protocol}//${window.location.host}/account/view/${sessionStorage.getItem('username')}">Профиль</a>
+                        <a class="dropdown-item" href="${URL_MESSAGES}">Сообщения</a>
+                        ${staff_button}
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="${URL_LOGOUT}">Выйти</a>
+                    </div>
+                </div>`)
+                $('#div-menu').css('maggin-top', '-20px'); 
+            },
+            error: function(msg){
+                alert('Невозможно получить информацию о вас')
+            }
+        });
+        
     }
    
 }); 

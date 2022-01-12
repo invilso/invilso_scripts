@@ -522,7 +522,7 @@
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'global/css/summernote.css' %}"/>
 {% endblock %}
 
 {% block content %}
@@ -543,7 +543,7 @@
                         <div class="details__content-img">
                             <img src="{{ MEDIA_URL }}{{post.photo.file}}" alt="{{post.title}}" width="912" height="520">
                         </div>
-                        {{post.text}}
+                        {{post.text|safe}}
                         <div class="comment__wrap mt-60 pb-20">
                             {% if post.price > 0 %}
                             <a href="" class="btn">Buy for $ {{post.price}}</a> 
@@ -569,31 +569,35 @@
                             </div>
                         </div>
                     </div>
-                    <div class="comment__wrap pb-45 mb-45">
+                    <div class="comment__wrap pb-35 mb-35">
                         <div class="comment__wrap-title">
                             <h5>Комментарии</h5>
                         </div>
                         {% for comment in post.comments.all %}
+                        {% if comment.text != 'test' %}
                         <div class="single__comment mb-35">
                             <div class="comments-avatar">
+                                {% if comment.owner.profile.photo.file %}
                                 <img src="{{ MEDIA_URL }}{{comment.owner.profile.photo.file}}" alt="" width="90" height="90">
+                                {% else %}
+                                <img src="https://brilliant24.ru/files/cat/template_01.png" alt="" width="90" height="90">
+                                {% endif %}
                             </div>
                             <div class="comment-text">
-                                <div class="avatar-name mb-15">
+                                <div class="avatar-name mb-25">
                                     <h6>{{comment.owner}}</h6>
                                     <span>{{ comment.timestamp|timesince }} назад</span>
                                 </div>
-                                <p>{{comment.text}}</p>
+                                <p>{{comment.text|safe}}</p>
                             </div>
                         </div>
+                        {%endif%}
                         {% endfor %}
                     </div>
-                    <div class="post-comments-form mb-50">
-                        <div class="comment__wrap-title">
-                            <h5>Post Comment</h5>
-                        </div>
+                    <div class="post-comments-form mb-20 mt-20" id='summer'>
+                        <div id="summernote"></div>
                         <div class="comment-box"> 
-                            <button class="btn">Post Comments</button>
+                            <button type="button" class="btn" id='send'>Отправить</button>
                         </div>
                     </div>
                 </div>
@@ -604,5 +608,10 @@
 {% endblock %}
 
 {% block javascript %}
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        const POST_ID = "{{post.id}}"
+    </script>
+    <script src="{% static 'global/js/summernote.js' %}"></script>
+    <script src="{% static 'global/lang/summernote-ru-RU.min.js' %}"></script>
+    <script src="{% static 'posts/js/comment.js' %}"></script>
 {% endblock %}

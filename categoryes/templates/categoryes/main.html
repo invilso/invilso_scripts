@@ -534,7 +534,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10">
-                {{ posts.number }} из {{ posts.paginator.num_pages }} 
                 {% for post in posts %}
                     {% if post.moderated %}
                         <div class="bsingle__post mb-40">
@@ -550,7 +549,7 @@
                                     </ul>
                                 </div>
                                 <h2><a href="{% url 'posts:view' pk=post.id %}">{{post.title}}</a></h2>
-                                <p>{{ post.text|truncatewords_html:50 }}</p>
+                                <p>{{ post.text|truncatewords_html:50|safe }}</p>
                             </div>
                         </div>
                     {% endif %}

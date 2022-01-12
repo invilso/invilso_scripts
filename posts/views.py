@@ -17,6 +17,12 @@ class PostCreateAPI(ListView): #todo
     def post(self, request):
         return JsonResponse(response)
 
+
+class PostCreate(ListView): #todo
+    def get(self, request): 
+        return render(request, 'posts/create.html')
+
+
 class PostView(ListView):
     def get(self, request, **kwargs): 
         post = getPost(kwargs['pk'])
