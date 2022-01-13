@@ -152,4 +152,5 @@ cython_debug/
 
 config.py
 uploads/
+logs/
 # End of https://www.toptal.com/developers/gitignore/api/django

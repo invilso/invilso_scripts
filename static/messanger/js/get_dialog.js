@@ -3,9 +3,9 @@ let current_dialog = null
 function updateSummernoteStatus() {
     $('#summernote').summernote('reset')
     $('#summernote').summernote('fontName', 'Arial');
-    $('#summernote').summernote('fontSize', 14);
+    $('#summernote').summernote('fontSize', 16);
     $('#summernote').summernote('foreColor', 'black');
-    $('#summernote').summernote('lineHeight', 0.5);
+    $('#summernote').summernote('lineHeight', 1.0);
 }
 
 function sendMessage(message, dialog) {
@@ -71,7 +71,7 @@ function getDialog(d_id) {
                         result = result + `
                         <li class="chat-left" msg-id="${message.id}">
                             <div class="chat-avatar">
-                                <img src="${getDialogPhoto(message.sender.photo)}" alt="${message.sender.username}">
+                                <img src="${getDialogPhoto(message.sender.photo)}" alt="${message.sender.username}" class="img-av" width="48px" height = "48px">
                                 <div class="chat-name">${message.sender.username}</div>
                             </div>
                             <div class="chat-text">${message.text}</div>
@@ -83,7 +83,7 @@ function getDialog(d_id) {
                             <div class="chat-hour">${getLocalizeDateTime(message.timestamp)}</div>
                             <div class="chat-text">${message.text}</div>
                             <div class="chat-avatar">
-                                <img src="${getDialogPhoto(message.sender.photo)}" alt="${message.sender.username}">
+                                <img src="${getDialogPhoto(message.sender.photo)}" alt="${message.sender.username}" class="img-av" width="48px" height = "48px">
                                 <div class="chat-name">${message.sender.username}</div>
                             </div>
                         </li>`
@@ -110,8 +110,8 @@ function initSummernote() {
         height: 130,
         toolbar: [
           ['style', ['bold', 'italic']],
-          ['font', ['fontname', 'strikethrough', 'color']],
-          ['para', ['ul', 'ol', 'paragraph', 'height']],
+          ['font', ['fontname', 'strikethrough', 'color', 'fontsize']],
+          ['para', ['paragraph']],
           ['insert', ['picture', 'link', 'video']],
           ['misc', ['fullscreen', 'codeview']],
         ],
@@ -137,7 +137,7 @@ function initSummernote() {
             ]
         },
         lang: 'ru-RU',
-        lineHeights: ['0.5', '1.0'],
+        lineHeights: ['1.0'],
         placeholder: 'Писать тут',
         fontNames: ['Arial', 'Arial Black', 'Times New Roman'],
         disableDragAndDrop: true
