@@ -47,35 +47,35 @@ function initSummernote() {
     $('#summernote').summernote({
         height: 130,
         toolbar: [
-          ['style', ['bold', 'italic']],
-          ['font', ['fontname', 'strikethrough', 'color']],
-          ['para', ['ul', 'ol', 'paragraph', 'height']],
-          ['insert', ['picture', 'link', 'video']],
-          ['misc', ['fullscreen', 'codeview']],
-        ],
+            ['style', ['bold', 'italic']],
+            ['font', ['fontname', 'strikethrough', 'color']],
+            ['para', ['paragraph']],
+            ['insert', ['link']],
+            ['misc', ['fullscreen', 'codeview']],
+            ],
         popover: {
             image: [
-              ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
-              ['float', ['floatLeft', 'floatRight', 'floatNone']],
-              ['remove', ['removeMedia']]
+            ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+            ['float', ['floatLeft', 'floatRight', 'floatNone']],
+            ['remove', ['removeMedia']]
             ],
             link: [
-              ['link', ['linkDialogShow', 'unlink']]
+            ['link', ['linkDialogShow', 'unlink']]
             ],
             table: [
-              ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
-              ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+            ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+            ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
             ],
             air: [
-              ['color', ['color']],
-              ['font', ['bold', 'underline', 'clear']],
-              ['para', ['ul', 'paragraph']],
-              ['table', ['table']],
-              ['insert', ['link', 'picture']]
+            ['color', ['color']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['para', ['ul', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture']]
             ]
         },
         lang: 'ru-RU',
-        lineHeights: ['0.5', '1.0'],
+        lineHeights: ['1.0'],
         placeholder: 'Писать тут',
         fontNames: ['Arial', 'Arial Black', 'Times New Roman'],
         disableDragAndDrop: true
