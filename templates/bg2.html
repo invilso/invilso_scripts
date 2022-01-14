@@ -23,9 +23,20 @@
         <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
         {% block head %} {% endblock %}
 	<style>
-	.note-group-select-from-files {
-  	    display: none;
-	}	
+        .note-group-select-from-files {
+            display: none;
+        }	
+        @media screen and (orientation: portrait) {
+            .header__logo {
+                margin-top: 15px;
+            }
+            .navbar-toggler {
+                margin-top: 15px;
+            }
+            #buttons-login-menu {
+                margin-top: -45px;
+            }
+        }
 	</style>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     </head>
@@ -59,7 +70,7 @@
                         </div>
                         
                     </div>
-                    <div class="col-xl-2 d-none d-xl-block">
+                    <div class="col-xl-2 d-xl-block">
                         <div class="header__btn text-right" id="buttons-login-menu">
                             <a href="#" class="btn btn-login" id="button-login" style="visibility: visible;">LOADING</a>
                         </div>
