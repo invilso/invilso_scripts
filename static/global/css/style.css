@@ -2493,7 +2493,8 @@ a.logo-link {
     padding-bottom: 0; }
 
 .bsingle__post-thumb img {
-  width: 100%; }
+  width: 100%;
+  height: 100%;}
 .bsingle__post .video-p {
   position: relative; }
   .bsingle__post .video-p .video-i {

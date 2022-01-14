@@ -34,4 +34,4 @@ urlpatterns = [
     path('info/', include('information.urls', namespace = 'info')),
     path('authentication/', include('authentication.urls', namespace = 'authentication')),
     path('billing/', include('payments.urls', namespace = 'payments')),
-]# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
