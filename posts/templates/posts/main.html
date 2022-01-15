@@ -550,7 +550,7 @@
                             <br>
                             <img src="{% static 'global/img/logo/visa.png' %}" alt="visa" width="35" height="30" style="margin-top: 10px">
                             <img src="{% static 'global/img/logo/mastercard.png' %}" alt="mastercard" width="35" height="30" style="margin-left: 17px; margin-top: 10px">
-                            {% else %}
+                            {% elif post.price == 0 %}
                             {% for f in post.file.all %}
                             <a href="{% url 'files:download' pk=f.id %}" class="btn">{{f.file.name}}<br>{{f.file.size|filesizeformat}}</a>
                             {% endfor %}
