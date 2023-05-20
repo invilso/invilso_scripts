@@ -261,7 +261,7 @@ LANGUAGES = (
 	('ru', gettext('Russian')),
 	('uk', gettext('Ukrainian')),
 )
-
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 # Timezone
 TIME_ZONE = 'UTC'
 USE_TZ = True
