@@ -34,6 +34,7 @@ urlpatterns = [
     path('info/', include('information.urls', namespace = 'info')),
     path('authentication/', include('authentication.urls', namespace = 'authentication')),
     path('billing/', include('payments.urls', namespace = 'payments')),
+    path("i18n/", include("django.conf.urls.i18n")),
 ] 
 
 if settings.DEBUG:
