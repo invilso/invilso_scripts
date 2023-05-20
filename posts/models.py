@@ -19,4 +19,4 @@ class Post(models.Model):
     file = models.ManyToManyField(File)
     moderated = models.BooleanField(default=False)
     def __str__(self) -> str:
-        return self.title
+        return f'{self.pk} | {self.title}'
