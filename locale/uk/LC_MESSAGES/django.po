@@ -22,8 +22,6 @@ msgstr ""
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: .\account\templates\account\view.html:5
-#, fuzzy
-#| msgid "Profile"
 msgid "View profile"
 msgstr "Профіль"
 
@@ -40,10 +38,8 @@ msgid "Admin"
 msgstr "Адміністратор"
 
 #: .\account\templates\account\view.html:186
-#, fuzzy
-#| msgid "About Us"
 msgid "About user"
-msgstr "Про нас"
+msgstr "Про користувача"
 
 #: .\account\templates\account\view.html:187
 msgid "Write a message"
@@ -78,8 +74,6 @@ msgid "Registered"
 msgstr "Зареєстрований"
 
 #: .\account\templates\account\view.html:232
-#, fuzzy
-#| msgid "Messages"
 msgid "Your message"
 msgstr "Повідомлення"
 
@@ -193,8 +187,6 @@ msgid "New users"
 msgstr "Нові користувачі"
 
 #: .\messanger\templates\messanger\main.html:4
-#, fuzzy
-#| msgid "Messages"
 msgid "Messanger"
 msgstr "Повідомлення"
 
