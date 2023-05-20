@@ -181,6 +181,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'invilso_scripts.middleware.exception.ExceptionMiddleware',
+    'django.middleware.locale.LocaleMiddleware'
 ]
 
 ROOT_URLCONF = 'invilso_scripts.urls'
@@ -241,16 +242,23 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
+# https://docs.djangoproject.com/en/4.1/topics/i18n/
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale/'), )
 
-LANGUAGE_CODE = 'ru-ru'
-
-TIME_ZONE = 'Europe/Moscow'
-
+# Language
 USE_I18N = True
-
 USE_L10N = True
 
+LANGUAGE_CODE = 'en-us'
+gettext = lambda s: s
+LANGUAGES = (
+	('en', gettext('English')),
+	('ru', gettext('Russian')),
+	('uk', gettext('Ukrainian')),
+)
+
+# Timezone
+TIME_ZONE = 'UTC'
 USE_TZ = True
 
 

@@ -1,0 +1,296 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-20 17:42+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\account\templates\account\view.html:5
+#, fuzzy
+#| msgid "Profile"
+msgid "View profile"
+msgstr "Профіль"
+
+#: .\account\templates\account\view.html:157
+msgid "Website user"
+msgstr "Користувач сайту"
+
+#: .\account\templates\account\view.html:165
+msgid "Owner"
+msgstr "Власник"
+
+#: .\account\templates\account\view.html:168
+msgid "Admin"
+msgstr "Адміністратор"
+
+#: .\account\templates\account\view.html:186
+#, fuzzy
+#| msgid "About Us"
+msgid "About user"
+msgstr "Про нас"
+
+#: .\account\templates\account\view.html:187
+msgid "Write a message"
+msgstr "Написати повідомлення"
+
+#: .\account\templates\account\view.html:188
+msgid "Change"
+msgstr "Змінити"
+
+#: .\account\templates\account\view.html:193
+msgid "Profile Information"
+msgstr "Інформація про профіль"
+
+#: .\account\templates\account\view.html:198
+msgid "Name"
+msgstr "Ім'я"
+
+#: .\account\templates\account\view.html:204
+msgid "Surname"
+msgstr "Прізвище"
+
+#: .\account\templates\account\view.html:210
+msgid "Location"
+msgstr "Місцезнаходження"
+
+#: .\account\templates\account\view.html:216
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: .\account\templates\account\view.html:222
+msgid "Registered"
+msgstr "Зареєстрований"
+
+#: .\account\templates\account\view.html:232
+#, fuzzy
+#| msgid "Messages"
+msgid "Your message"
+msgstr "Повідомлення"
+
+#: .\account\templates\account\view.html:235
+#: .\messanger\templates\messanger\main.html:567
+#: .\posts\templates\posts\main.html:600
+msgid "Send"
+msgstr "Надіслати"
+
+#: .\authentication\templates\authentication\login.html:4
+msgid "Authorization"
+msgstr "Авторизація"
+
+#: .\authentication\templates\authentication\login.html:144
+msgid "AUTHORIZATION"
+msgstr "АВТОРИЗАЦІЯ"
+
+#: .\authentication\templates\authentication\login.html:146
+#: .\authentication\templates\authentication\registration.html:147
+#: .\templates\bg2.html:193
+msgid "Login"
+msgstr "Увійти"
+
+#: .\authentication\templates\authentication\login.html:150
+#: .\authentication\templates\authentication\registration.html:151
+msgid "Password"
+msgstr "Пароль"
+
+#: .\authentication\templates\authentication\login.html:158
+#: .\authentication\templates\authentication\registration.html:165
+msgid "Show password"
+msgstr "Показати пароль"
+
+#: .\authentication\templates\authentication\login.html:159
+msgid "LOGIN"
+msgstr "УВІЙТИ"
+
+#: .\authentication\templates\authentication\login.html:163
+msgid "Don't have an account yet?"
+msgstr "Ще немає облікового запису?"
+
+#: .\authentication\templates\authentication\login.html:178
+msgid "Enter correct data for authorization"
+msgstr "Введіть правильні дані для авторизації"
+
+#: .\authentication\templates\authentication\logout.html:4
+#: .\templates\bg2.html:198
+msgid "Logout"
+msgstr "Вийти"
+
+#: .\authentication\templates\authentication\logout.html:140
+msgid "You have successfully logged out of your account."
+msgstr "Ви успішно вийшли зі свого облікового запису."
+
+#: .\authentication\templates\authentication\logout.html:141
+msgid "Redirect to homepage after 2 seconds."
+msgstr "Переспрямування на головну сторінку через 2 секунди."
+
+#: .\authentication\templates\authentication\registration.html:4
+msgid "Registration"
+msgstr "Реєстрація"
+
+#: .\authentication\templates\authentication\registration.html:145
+msgid "REGISTRATION"
+msgstr "РЕЄСТРАЦІЯ"
+
+#: .\authentication\templates\authentication\registration.html:160
+msgid "CREATE AN ACCOUNT"
+msgstr "СТВОРИТИ АККАУНТ"
+
+#: .\authentication\templates\authentication\registration.html:169
+msgid "Already have an account?"
+msgstr "Вже є аккаунт?"
+
+#: .\authentication\templates\authentication\registration.html:185
+msgid "Such a user already exists."
+msgstr "Такий користувач уже існує."
+
+#: .\authentication\templates\authentication\registration.html:186
+msgid "Email entered incorrectly."
+msgstr "Електронна адреса введена неправильно."
+
+#: .\categoryes\templates\categoryes\main.html:548
+#: .\main\templates\main\main.html:552 .\posts\templates\posts\main.html:538
+#: .\posts\templates\posts\main.html:589
+msgid "ago"
+msgstr "тому"
+
+#: .\categoryes\templates\categoryes\main.html:561
+msgid "from"
+msgstr "з"
+
+#: .\invilso_scripts\settings.py:255
+msgid "English"
+msgstr "Англійська"
+
+#: .\invilso_scripts\settings.py:256
+msgid "Russian"
+msgstr "Руснява"
+
+#: .\invilso_scripts\settings.py:257
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: .\main\templates\main\main.html:539
+msgid "New posts"
+msgstr "Нові пости"
+
+#: .\main\templates\main\main.html:566
+msgid "New users"
+msgstr "Нові користувачі"
+
+#: .\messanger\templates\messanger\main.html:4
+#, fuzzy
+#| msgid "Messages"
+msgid "Messanger"
+msgstr "Повідомлення"
+
+#: .\messanger\templates\messanger\main.html:548
+msgid "Dialogs loaded"
+msgstr "Діалоги завантажено"
+
+#: .\messanger\templates\messanger\main.html:556
+msgid "Choose a dialogue"
+msgstr "Виберіть діалог"
+
+#: .\posts\templates\posts\main.html:549
+msgid "Buy for $"
+msgstr "Купити за $"
+
+#: .\posts\templates\posts\main.html:562
+msgid "Subcategories"
+msgstr "Підкатегорії"
+
+#: .\posts\templates\posts\main.html:574
+msgid "Comments"
+msgstr "Коментарі"
+
+#: .\templates\bg2.html:103
+msgid "Other Services"
+msgstr "Інші сервіси"
+
+#: .\templates\bg2.html:106
+msgid "About Us"
+msgstr "Про нас"
+
+#: .\templates\bg2.html:118
+msgid "Resources"
+msgstr "Ресурси"
+
+#: .\templates\bg2.html:122
+msgid "Privacy policy"
+msgstr "Політика конфіденційності"
+
+#: .\templates\bg2.html:123
+msgid "License agreement"
+msgstr "Ліцензійна угода"
+
+#: .\templates\bg2.html:124
+msgid "Consent to data processing"
+msgstr "Згода на обробку даних"
+
+#: .\templates\bg2.html:125
+msgid "Refund policy"
+msgstr "Політика повернення платежів"
+
+#: .\templates\bg2.html:134
+msgid "Contacts"
+msgstr "Контакти"
+
+#: .\templates\bg2.html:166
+msgid "Functional"
+msgstr "Функціонал"
+
+#: .\templates\bg2.html:167
+msgid "Theme"
+msgstr "Тема"
+
+#: .\templates\bg2.html:192
+msgid "Write here.."
+msgstr "Пишіть тут.."
+
+#: .\templates\bg2.html:194
+msgid "Create post"
+msgstr "Створити пост"
+
+#: .\templates\bg2.html:195
+msgid "Menu"
+msgstr "Меню"
+
+#: .\templates\bg2.html:196
+msgid "Profile"
+msgstr "Профіль"
+
+#: .\templates\bg2.html:197
+msgid "Messages"
+msgstr "Повідомлення"
+
+#: .\templates\error.html:24
+msgid ""
+"An error has occurred on the server. Report it to any of the contacts listed "
+"below."
+msgstr "На сервері сталася помилка. Повідомте про це за будь-яким із зазначених нижче контактів."
+
+#: .\templates\error.html:25
+msgid "Specify the exact time when the error occurred."
+msgstr "Вкажіть точний час, коли сталася помилка."
+
+#: .\templates\error.html:26
+msgid "Brief description of the error"
+msgstr "Короткий опис помилки"
+
+#~ msgid "later"
+#~ msgstr "тому"

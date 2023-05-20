@@ -1,5 +1,5 @@
 {% extends "bg2.html" %}
-
+{% load i18n %}
 {% block title %}
 {{category.name}}
 {% endblock %}
@@ -545,7 +545,7 @@
                                     <ul>
                                         <li><a href="{% url 'account:view' username=post.owner %}"><i class="far fa-user"></i>{{post.owner}}</a></li>
                                         <li><i class="far fa-comments"></i>{{ post.comments.count }}</li>
-                                        <li>{{ post.timestamp|timesince }} назад</li>
+                                        <li>{{ post.timestamp|timesince }} {% trans "ago" %}</li>
                                     </ul>
                                 </div>
                                 <h2><a href="{% url 'posts:view' pk=post.id %}">{{post.title}}</a></h2>
@@ -558,7 +558,7 @@
                 <div class="header__btn text-right" id="buttons-login-menu">
                     {% if posts.has_other_pages %}
                         <a class="btn {% if not posts.has_previous %} disabled {% endif %}" href="?page={% if posts.has_previous %}{{ posts.previous_page_number }}{% endif %}" tabindex="-1">Prev</a>
-                        {{ posts.number }} из {{ posts.paginator.num_pages }} 
+                        {{ posts.number }} {% trans "from" %} {{ posts.paginator.num_pages }} 
                         <a class="btn {% if not posts.has_next %} disabled {% endif %}" href="?page={% if posts.has_next %}{{ posts.next_page_number }}{% endif %}">Next</a>
                     {% endif %}
                 </div>

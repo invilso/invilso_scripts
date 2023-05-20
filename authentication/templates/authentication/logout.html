@@ -1,7 +1,7 @@
 {% extends "bg2.html" %}
-
+{% load i18n %}
 {% block title %}
-Выход
+{% trans "Logout" %}
 {% endblock %}
 
 {% block head %}
@@ -137,8 +137,8 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Вы успешно вышли с аккаута.</h2> 
-    <h3>Перенаправление на главную через 2 секунды.</h3>
+    <h2>{% trans "You have successfully logged out of your account." %}</h2> 
+    <h3>{% trans "Redirect to homepage after 2 seconds." %}</h3>
 {% endblock %}
 
 {% block javascript %}

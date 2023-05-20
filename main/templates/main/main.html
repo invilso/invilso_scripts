@@ -1,5 +1,5 @@
 {% extends "bg2.html" %}
-
+{% load i18n %}
 {% block title %}
 INVILSO SCRIPTS
 {% endblock %}
@@ -536,7 +536,7 @@ INVILSO SCRIPTS
         <div class="row">
             <div class="col-lg-8">
                 <div class="widget-title text-center" style="margin-top: -40px;">
-                    <h4>Новые посты</h4>
+                    <h4>{% trans "New posts" %}</h4>
                 </div>
                 {% for post in posts %}
                     {% if post.moderated %}
@@ -549,7 +549,7 @@ INVILSO SCRIPTS
                                     <ul>
                                         <li><a href="{% url 'account:view' username=post.owner %}"><i class="far fa-user"></i>{{post.owner}}</a></li>
                                         <li><i class="far fa-comments"></i>{{ post.comments.count }}</li>
-                                        <li>{{ post.timestamp|timesince }} назад</li>
+                                        <li>{{ post.timestamp|timesince }} {% trans "ago" %}</li>
                                     </ul>
                                 </div>
                                 <h2><a href="{% url 'posts:view' pk=post.id %}">{{post.title}}</a></h2>
@@ -563,7 +563,7 @@ INVILSO SCRIPTS
                 <aside>
                     <div class="widget mb-40">
                         <div class="widget-title text-center">
-                            <h4>Новые пользователи</h4>
+                            <h4>{% trans "New users" %}</h4>
                         </div>
                         <div class="widget__tag">
                             <ul>

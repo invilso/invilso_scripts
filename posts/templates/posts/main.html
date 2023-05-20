@@ -1,5 +1,5 @@
 {% extends "bg2.html" %}
-
+{% load i18n %}
 {% block title %}
 {{ post.title }}
 {% endblock %}
@@ -535,7 +535,7 @@
                         <ul>
                             <li><a href="{% url 'account:view' username=post.owner %}"><i class="far fa-user"></i>{{post.owner}}</a></li>
                             <li><i class="far fa-comments"></i>{{ post.comments.count }}</li>
-                            <li>{{ post.timestamp|timesince }} назад</li>
+                            <li>{{ post.timestamp|timesince }} {% trans "ago" %}</li>
                         </ul>
                     </div>
                     <div class="details__content pb-50">
@@ -546,7 +546,7 @@
                         {{post.text|safe}}
                         <div class="comment__wrap mt-60 pb-20">
                             {% if post.price > 0 %}
-                            <a href="" class="btn">Buy for $ {{post.price}}</a> 
+                            <a href="" class="btn">{% trans "Buy for $" %}{{post.price}}</a> 
                             <br>
                             <img src="{% static 'global/img/logo/visa.png' %}" alt="visa" width="35" height="30" style="margin-top: 10px">
                             <img src="{% static 'global/img/logo/mastercard.png' %}" alt="mastercard" width="35" height="30" style="margin-left: 17px; margin-top: 10px">
@@ -559,7 +559,7 @@
                         <div class="comment__wrap mt-50 pb-45">
                             <div class="post__tag">
                                 <div class="comment__wrap-title">
-                                    <h5>Подкатегории</h5>
+                                    <h5>{% trans "Subcategories" %}</h5>
                                 </div>
                                 <ul>
                                     {% for subcat in post.subcategoryes.all %}
@@ -571,7 +571,7 @@
                     </div>
                     <div class="comment__wrap pb-35 mb-35">
                         <div class="comment__wrap-title">
-                            <h5>Комментарии</h5>
+                            <h5>{% trans "Comments" %}</h5>
                         </div>
                         {% for comment in post.comments.all %}
                         {% if comment.text != 'test' %}
@@ -586,7 +586,7 @@
                             <div class="comment-text">
                                 <div class="avatar-name mb-25">
                                     <h6>{{comment.owner}}</h6>
-                                    <span>{{ comment.timestamp|timesince }} назад</span>
+                                    <span>{{ comment.timestamp|timesince }} {% trans "ago" %}</span>
                                 </div>
                                 <p>{{comment.text|safe}}</p>
                             </div>
@@ -597,7 +597,7 @@
                     <div class="post-comments-form mb-20 mt-20" id='summer'>
                         <div id="summernote"></div>
                         <div class="comment-box"> 
-                            <button type="button" class="btn" id='send'>Отправить</button>
+                            <button type="button" class="btn" id='send'>{% trans "Send" %}</button>
                         </div>
                     </div>
                 </div>

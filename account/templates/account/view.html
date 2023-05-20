@@ -1,7 +1,8 @@
 {% extends "bg2.html" %}
+{% load i18n %}
 
 {% block title %}
-Просмотр профиля {{ account.username }}
+{% trans "View profile" %} {{ account.username }}
 {% endblock %}
 
 {% block head %}
@@ -153,7 +154,7 @@
                         <div class="panel-heading">
                             <header class="panel-title">
                                 <div class="text-center">
-                                    <strong>Пользователь сайта  </strong>
+                                    <strong>{% trans "Website user" %}  </strong>
                                 </div>
                             </header>
                         </div>
@@ -161,10 +162,10 @@
                             <div class="text-center" id="author">
                                 <h3>{{ account.username }}</h3>
                                 {% if account.is_superuser %}
-                                    <small class="label label-warning">Создатель</small>
+                                    <small class="label label-warning">{% trans "Owner" %}</small>
                                     <br>
                                 {% elif account.is_staff %}
-                                    <small class="label label-warning">Администратор</small>
+                                    <small class="label label-warning">{% trans "Admin" %}</small>
                                     <br>
                                 {% endif %}
                                 {% if account.profile.photo %}
@@ -182,43 +183,43 @@
                 <div class="col-lg-8 col-md-8 col-xs-12">
                     <div class="panel">
                         <div class="panel-body">
-                            <button class="btn" id="detail-btn">О пользователе</button>
-                            <button class="btn" id="ctbnt">Написать</button>
-                            <button class="btn" id="ctbnt2">Изменить</button>
+                            <button class="btn" id="detail-btn">{% trans "About user" %}</button>
+                            <button class="btn" id="ctbnt">{% trans "Write a message" %}</button>
+                            <button class="btn" id="ctbnt2">{% trans "Change" %}</button>
                             
                             <div id="myTabContent" class="tab-content">
                                 <hr />
                                 <div class="tab-pane fade active in" id="detail">
-                                    <h4>Информация о профиле</h4>
+                                    <h4>{% trans "Profile Information" %}</h4>
                                     <table class="table table-th-block">
                                         <tbody>
                                             {% if account.profile.first_name %}
                                                 <tr>
-                                                    <td class="active">Имя:</td>
+                                                    <td class="active">{% trans "Name" %}:</td>
                                                     <td>{{ account.profile.first_name }}</td>
                                                 </tr>
                                             {% endif %}
                                             {% if account.profile.last_name %}
                                                 <tr>
-                                                    <td class="active">Фамилия:</td>
+                                                    <td class="active">{% trans "Surname" %}:</td>
                                                     <td>{{ account.profile.last_name }}</td>
                                                 </tr>
                                             {% endif %}
                                             {% if account.profile.location %}
                                                 <tr>
-                                                    <td class="active">Местоположение:</td>
+                                                    <td class="active">{% trans "Location" %}:</td>
                                                     <td>{{ account.profile.location }}</td>
                                                 </tr>
                                             {% endif %}
                                             {% if account.profile.email %}
                                                 <tr>
-                                                    <td class="active">E-mail:</td>
+                                                    <td class="active">{% trans "E-Mail" %}:</td>
                                                     <td>{{ account.profile.email }}</td>
                                                 </tr>
                                             {% endif %}
                                             {% if account.date_joined %}
                                                 <tr>
-                                                    <td class="active">Зарегистрирован:</td>
+                                                    <td class="active">{% trans "Registered" %}:</td>
                                                     <td>{{ account.date_joined }}</td>
                                                 </tr>
                                             {% endif %}
@@ -228,10 +229,10 @@
                                 </div>
                                 <div class="tab-pane fade active in" id="contact">
                                     <form role="form-horizontal">
-                                        <h4>Ваше сообщение</h4>
+                                        <h4>{% trans "Your message" %}</h4>
                                         <div id="summernote"></div>
                                         <div class="form-group">
-                                            <button type="button" class="btn" id='send'>Отправить</button>
+                                            <button type="button" class="btn" id='send'>{% trans "Send" %}</button>
                                         </div>
                                     </form>
                                 </div>

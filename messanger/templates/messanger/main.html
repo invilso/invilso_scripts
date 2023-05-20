@@ -1,7 +1,7 @@
 {% extends "bg2.html" %}
-
+{% load i18n %}
 {% block title %}
-Мессенджер
+{% trans "Messanger" %}
 {% endblock %}
 
 {% block head %}
@@ -545,7 +545,7 @@
                                 <ul class="users" id="dialogs-list">
                                     <li class="person" data-chat="person1">
                                         <p class="name-time">
-                                            <span class="name">Диалоги загружаются</span>
+                                            <span class="name">{% trans "Dialogs loaded" %}</span>
                                         </p>
                                     </li>
                                 </ul>
@@ -553,7 +553,7 @@
                         </div>
                         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
                             <div class="selected-user">
-                                <span class="name" id="name-dialog">Нужно выбрать диалог</span>
+                                <span class="name" id="name-dialog">{% trans "Choose a dialogue" %}</span>
                                 <!-- <button type="button" class="btn" id='btn-send'>Обновить</button> -->
                                 <i class="fas fa-sync" style="margin-left: 20px" id="reload-icon"></i>
                             </div>
@@ -564,7 +564,7 @@
                                 </div>
                                 <div class="form-group mt-3 mb-0" id="summer">
                                     <div id="summernote"></div>
-                                    <button type="button" class="btn" id='btn-send'>Отправить</button>
+                                    <button type="button" class="btn" id='btn-send'>{% trans "Send" %}</button>
                                 </div>
                             </div>
                         </div>

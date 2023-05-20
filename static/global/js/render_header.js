@@ -19,7 +19,7 @@ $(document).ready(function(){
         }
     });
     if (!sessionStorage.getItem('username')){
-        $("#button-login").text('Войти')
+        $("#button-login").text(LOGIN_TEXT)
         $("#button-login").attr('href', window.location.protocol+'//'+window.location.host+'/authentication/login')
         $('#button-login').css('font-family', 'Rubik'); 
     } else {
@@ -31,19 +31,19 @@ $(document).ready(function(){
             dataType : 'json',
             success: function(msg){
                 if (msg.is_staff){
-                    staff_button = `<a class="dropdown-item" href="">Создать пост</a>`
+                    staff_button = `<a class="dropdown-item" href="">${CREATE_POST_TEXT}</a>`
                 }
                 $('#buttons-login-menu').html(`<div class="btn-group" style="margin-top:-20px">
-                    <button type="button" class="btn" style="font-family:Rubik">Меню</button>
+                    <button type="button" class="btn" style="font-family:Rubik">${MENU_TEXT}</button>
                     <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Меню</span>
+                        <span class="sr-only">${MENU_TEXT}</span>
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="${window.location.protocol}//${window.location.host}/account/view/${sessionStorage.getItem('username')}">Профиль</a>
-                        <a class="dropdown-item" href="${URL_MESSAGES}">Сообщения</a>
+                        <a class="dropdown-item" href="${window.location.protocol}//${window.location.host}/account/view/${sessionStorage.getItem('username')}">${PROFILE_TEXT}</a>
+                        <a class="dropdown-item" href="${URL_MESSAGES}">${MESSAGES_TEXT}</a>
                         ${staff_button}
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="${URL_LOGOUT}">Выйти</a>
+                        <a class="dropdown-item" href="${URL_LOGOUT}">${LOGOUT_TEXT}</a>
                     </div>
                 </div>`)
                 $('#div-menu').css('maggin-top', '-20px'); 

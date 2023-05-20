@@ -1,3 +1,4 @@
+{% load i18n %}
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -99,10 +100,10 @@
                         <div class="footer__widget mb-10">
                             <div class="footer__widget-link">
                                 <div class="footer__widget-title mb-20">
-                                    <h4>Other Services</h4>
+                                    <h4>{% trans "Other Services" %}</h4>
                                 </div>
                                 <ul>
-                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">{% trans "About Us" %}</a></li>
                                     <li><a href="http://helper-tools.invilso.pp.ua/">HelperTools</a></li>
                                     <li><a href="http://banlist-tool.invilso.pp.ua/">BanlistTool</a></li>
                                     <li><a href="http://fracthelper.invilso.pp.ua/">FractHelper</a></li>
@@ -114,14 +115,14 @@
                         <div class="footer__widget mb-10">
                             <div class="footer__widget-link">
                                 <div class="footer__widget-title mb-20">
-                                    <h4>Resources</h4>
+                                    <h4>{% trans "Resources" %}</h4>
                                 </div>
                                 <ul>
                                     
-                                    <li><a href="#">Политика конфиденциальности</a></li>
-                                    <li><a href="#">Лицензионное соглашение</a></li>
-                                    <li><a href="#">Согласие на обработку данных</a></li>
-                                    <li><a href="#">Политика возвратов платежей</a></li>
+                                    <li><a href="#">{% trans "Privacy policy" %}</a></li>
+                                    <li><a href="#">{% trans "License agreement" %}</a></li>
+                                    <li><a href="#">{% trans "Consent to data processing" %}</a></li>
+                                    <li><a href="#">{% trans "Refund policy" %}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -130,7 +131,7 @@
                         <div class="footer__widget mb-10">
                             <div class="footer__widget-link">
                                 <div class="footer__widget-title mb-20">
-                                    <h4>Contacts</h4>
+                                    <h4>{% trans "Contacts" %}</h4>
                                 </div>
                                 <ul>
                                     <li><a href="mailto:invilsomail@gmail.com">invilsomail@gmail.com</a></li>
@@ -162,8 +163,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="copyright__text pt-35 pb-35 text-center">
-                                <p>Functional: INVILSO SCRIPTS</p>
-                                <p>Theme: BasicTheme</p>
+                                <p>{% trans "Functional" %}: INVILSO SCRIPTS</p>
+                                <p>{% trans "Theme" %}: BasicTheme</p>
                             </div>
                         </div>
                     </div>
@@ -188,7 +189,13 @@
         <script>
             let URL_MESSAGES = "{% url 'messanger:view' %}"
             let URL_LOGOUT = "{% url 'authentication:logout' %}"
-            const WRITE_HERE = "Писать тут"
+            const WRITE_HERE = '{% trans "Write here.." %}'
+            const LOGIN_TEXT = '{% trans "Login" %}'
+            const CREATE_POST_TEXT = '{% trans "Create post" %}'
+            const MENU_TEXT = '{% trans "Menu" %}'
+            const PROFILE_TEXT = '{% trans "Profile" %}'
+            const MESSAGES_TEXT = '{% trans "Messages" %}'
+            const LOGOUT_TEXT = '{% trans "Logout" %}'
         </script>
         {% block javascript %}{% endblock %}
     </body>

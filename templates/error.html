@@ -1,5 +1,5 @@
 {% extends "bg2.html" %}
-
+{% load i18n %}
 {% block title %}
 500 Internal Error
 {% endblock %}
@@ -21,9 +21,9 @@
 {% block content %}
 <div class="centered-text">
 <h1 class="h1" style="font-size: 250px;">500</h1>
-<h2>На сервере произошла ошибка. Сообщите о ней по любому из контактов, которые указаны ниже.</h2>
-<h3>Укажите точное время когда случилась ошибка.</h3>
-<h4>Краткое описание ошибки: {{exception}}</h4>
+<h2>{% trans "An error has occurred on the server. Report it to any of the contacts listed below." %}</h2>
+<h3>{% trans "Specify the exact time when the error occurred." %}</h3>
+<h4>{% trans "Brief description of the error" %}: {{exception}}</h4>
 
 </div>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "bg2.html" %}
-
+{% load i18n %}
 {% block title %}
-Авторизация
+{% trans "Authorization" %}
 {% endblock %}
 
 {% block head %}
@@ -141,13 +141,13 @@
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
                 <form class="form-horizontal">
-                    <span class="heading">АВТОРИЗАЦИЯ</span>
+                    <span class="heading">{% trans "AUTHORIZATION" %}</span>
                     <div class="form-group">
-                        <input type="login" class="form-control" id="inputEmail" placeholder="Login" />
+                        <input type="login" class="form-control" id="inputEmail" placeholder="{% trans "Login" %}" />
                         <i class="fa fa-user"></i>
                     </div>
                     <div class="form-group help">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
+                        <input type="password" class="form-control" id="inputPassword" placeholder="{% trans "Password" %}" />
                         <i class="fa fa-lock"></i>
                     </div>
                     <div class="form-group">
@@ -155,12 +155,12 @@
                             <input type="checkbox" value="none" id="checkbox1" name="check" />
                             <label for="checkbox1"></label>
                         </div>
-                        <span class="text">Показать пароль</span>
-                        <button  id="login" type='button' class="btn btn-default">ВХОД</button>
+                        <span class="text">{% trans "Show password" %}</span>
+                        <button  id="login" type='button' class="btn btn-default">{% trans "LOGIN" %}</button>
                     </div>
                     <div class="form-group">
                         <!-- <span class="text">Уже есть аккаунт?</span> -->
-                        <a href="{% url 'authentication:registration' %}">Eщё нету аккаунта?</a>
+                        <a href="{% url 'authentication:registration' %}">{% trans "Don't have an account yet?" %}</a>
                     </div>
                     <div class="form-group">
                         <span class="error" id="error"></span>
@@ -175,7 +175,7 @@
 
 {% block javascript %}
     <script>
-        let INPUT_DATA_AUTH = 'Введите верные данные для авторизации'
+        let INPUT_DATA_AUTH = '{% trans "Enter correct data for authorization" %}'
     </script>
     <script src="{% static 'authentication/js/login.js' %}"></script>
 {% endblock %}

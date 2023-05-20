@@ -3,6 +3,7 @@ from django.views.generic.list import ListView
 
 class LoginView(ListView):
     def get(self, request):
+        x=2/0
         return render(request, 'authentication/login.html')
 
 class RegistrationView(ListView):
