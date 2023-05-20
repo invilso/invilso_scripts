@@ -2,7 +2,6 @@ from messanger.models import Dialog
 from account.models import Profile
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
-from django.contrib.postgres.aggregates import ArrayAgg
 
 def getDialogs(input: dict, request) -> dict:
     if input['user'] and input['token'] != None:
