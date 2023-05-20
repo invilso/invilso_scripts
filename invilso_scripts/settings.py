@@ -29,6 +29,8 @@ SECRET_KEY = config.SECRET_KEY
 DEBUG = config.DEBUG
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['http://invilso.pp.ua','http://*.127.0.0.1','https://invilso.pp.ua','https://*.127.0.0.1']
+
 MEDIA_ROOT = 'uploads/'
 LOGIN_REDIRECT_URL = '/'
 
