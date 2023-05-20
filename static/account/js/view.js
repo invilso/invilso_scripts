@@ -74,7 +74,7 @@ function initSummernote() {
         },
         lang: 'ru-RU',
         lineHeights: ['1.0'],
-        placeholder: 'Писать тут',
+        placeholder: WRITE_HERE,
         fontNames: ['Arial', 'Arial Black', 'Times New Roman'],
         disableDragAndDrop: true
     });

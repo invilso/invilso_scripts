@@ -20,12 +20,12 @@ $(document).ready(function(){
                 },
                 error: function(msg){
                     $("#error").attr('class', 'alert alert-danger')
-                    $("#error").text("Такой пользователь уже существует.");
+                    $("#error").text(USER_IS_EXSIST);
                 }
             });
         } else {
             $("#error").attr('class', 'alert alert-danger')
-            $("#error").text("E-mail введён некорректно.");
+            $("#error").text(BAD_EMAIL);
         }
         
     });

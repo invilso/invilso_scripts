@@ -15,7 +15,7 @@ $(document).ready(function(){
             },
             error: function(msg){
                 $("#error").attr('class', 'alert alert-danger')
-                $("#error").text("Введите верные данные для авторизации.");
+                $("#error").text(INPUT_DATA_AUTH);
             }
         });
     });

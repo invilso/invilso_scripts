@@ -181,5 +181,9 @@
     
 {% endblock %}
 {% block javascript %}
+    <script>
+        let USER_IS_EXSIST = 'Такой пользователь уже существует.'
+        let BAD_EMAIL = "E-mail введён некорректно."
+    </script>
     <script src="{% static 'authentication/js/registration.js' %}"></script>
 {% endblock %}
