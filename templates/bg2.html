@@ -50,7 +50,7 @@
                             <a href="{% url 'main:main' %}"><img src="{% static 'global/img/logo/logo.svg' %}" alt="logo"></a>
                         </div>
                     </div>
-                    <div class="col-xl-8 col-lg-9">
+                    <div class="col-xl-7 col-lg-9">
                         <div class="header__menu main-menu text-center">
                             <nav class="navbar navbar-expand-lg">
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -68,11 +68,31 @@
                         </div>
                         
                     </div>
-                    <div class="col-xl-2 d-xl-block">
+                    <div class="col-xl-1 d-xl-block">
                         <div class="header__btn text-right" id="buttons-login-menu">
                             <a href="#" class="btn btn-login" id="button-login" style="visibility: visible;">LOADING</a>
                         </div>
+                        
                     </div>
+                    <div class="col-xl-1 d-lg-block mb-4">
+                        <form action="{% url 'set_language' %}" method="post" class="form-inline" id="language-form">
+                            {% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}">
+                            <div class="form-group">
+                            <select name="language" class="form-control" style="background-color: #7673ff; color: #ffffff;" onchange="document.getElementById('language-form').submit();">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                    {{ language.code|upper }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            </div>
+                        </form>
+                    </div>
+                    
                 </div>
             </div>
         </header>
@@ -172,26 +192,6 @@
                     </div>
                     
                 </div>
-                <div class="row justify-content-end">
-                    <div class="col-auto">
-                      <form action="{% url 'set_language' %}" method="post" class="form-inline" id="language-form">
-                        {% csrf_token %}
-                        <input name="next" type="hidden" value="{{ redirect_to }}">
-                        <div class="form-group">
-                          <select name="language" class="form-control" onchange="document.getElementById('language-form').submit();">
-                            {% get_current_language as LANGUAGE_CODE %}
-                            {% get_available_languages as LANGUAGES %}
-                            {% get_language_info_list for LANGUAGES as languages %}
-                            {% for language in languages %}
-                              <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                                {{ language.name_local }} ({{ language.code }})
-                              </option>
-                            {% endfor %}
-                          </select>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
             </div>
                 
         </footer>

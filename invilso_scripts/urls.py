@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('account/', include('account.urls', namespace = 'account')),
     # path('auth/', include('django.contrib.auth.urls')),
     path('api/auth/', include('djoser.urls')),
@@ -36,6 +36,13 @@ urlpatterns = [
     path('billing/', include('payments.urls', namespace = 'payments')),
     path("i18n/", include("django.conf.urls.i18n")),
 ] 
+
+urlpatterns += i18n_patterns(
+    path('admin/', admin.site.urls),
+    path('', include('main.urls', namespace = 'main')),
+    path('categoryes/', include('categoryes.urls', namespace = 'categoryes')),
+    path('posts/', include('posts.urls', namespace = 'posts')),
+)
 
 if settings.DEBUG:
     urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
