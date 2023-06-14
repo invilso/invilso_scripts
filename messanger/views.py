@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic.list import ListView
 from django.http import JsonResponse
 from messanger.services.create import createMessage
@@ -16,6 +16,12 @@ class MessagesCreateAPI(ListView):
         response = createMessage(json.loads(request.body.decode('utf-8')))
         logger.debug('Создано сообщение')
         return JsonResponse(response)
+    
+class MessagesCreate(ListView):
+    def post(self, request):
+        createMessage(request.POST)
+        logger.debug('Создано сообщение')
+        return redirect(request.META.get('HTTP_REFERER'))
 
 @method_decorator(csrf_exempt, name='dispatch')
 class DialogsGetAPI(ListView):

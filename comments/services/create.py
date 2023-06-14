@@ -8,8 +8,9 @@ from rest_framework.authtoken.models import Token
 
 def createComment(input: dict) -> dict:
     """ Creation of a comment in a post. Depending on the context of the request. """
-    if input['text'] and input['receiver'] and input['sender'] and input['token'] != None and type(input['rating']) == int:
-        if input['rating'] > 0 and input['rating'] < 6:
+    if input['text'] and input['receiver'] and input['sender'] and input['token'] != None and input['rating']:
+        rating = int(input['rating'])
+        if rating > 0 and rating < 6:
             sender = User.objects.get(username=input['sender'])     
             if input['token'] == Token.objects.get(user=sender).key:
                 try:
@@ -18,12 +19,13 @@ def createComment(input: dict) -> dict:
                             replied_msg = Comment.objects.get(id=int(input['replied']))
                         except ValueError:
                             return {'status': 'error', 'desc':'Value error. In replied, you need to write the comment ID.'}
-                    msg = Comment(text=input['text'], parent=replied_msg, owner=sender, rating = input['rating'])
+                    msg = Comment(text=input['text'], parent=replied_msg, owner=sender, rating = rating)
                 except KeyError:
-                    msg = Comment(text=input['text'], owner=sender, rating = input['rating'])
+                    msg = Comment(text=input['text'], owner=sender, rating = rating)
                 msg.save()       
-                if type(input['receiver']) == int:
-                    post = Post.objects.get(id=input['receiver'])
+                receiver = int(input['receiver'])
+                if type(receiver) == int:
+                    post = Post.objects.get(id=receiver)
                     if post:
                         createInExistingPost(post, msg)
                         return {'status': 'success', 'desc':'Comment create.'}  

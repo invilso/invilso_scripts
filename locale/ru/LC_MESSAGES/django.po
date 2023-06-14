@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-20 17:42+0300\n"
+"POT-Creation-Date: 2023-06-15 01:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,61 +24,53 @@ msgstr ""
 msgid "View profile"
 msgstr "Профиль"
 
-#: .\account\templates\account\view.html:157
-msgid "Website user"
-msgstr "Пользователь сайта"
-
-#: .\account\templates\account\view.html:165
+#: .\account\templates\account\view.html:168
 msgid "Owner"
 msgstr "Создатель"
 
-#: .\account\templates\account\view.html:168
+#: .\account\templates\account\view.html:170
 msgid "Admin"
 msgstr "Админ"
 
-#: .\account\templates\account\view.html:186
+#: .\account\templates\account\view.html:199
 msgid "About user"
 msgstr "О пользователе"
 
-#: .\account\templates\account\view.html:187
-msgid "Write a message"
-msgstr "Написать сообщение"
-
-#: .\account\templates\account\view.html:188
-msgid "Change"
-msgstr "Изменить"
-
-#: .\account\templates\account\view.html:193
-msgid "Profile Information"
-msgstr "Информация о профиле"
-
-#: .\account\templates\account\view.html:198
+#: .\account\templates\account\view.html:203
 msgid "Name"
 msgstr "Имя"
 
-#: .\account\templates\account\view.html:204
+#: .\account\templates\account\view.html:209
 msgid "Surname"
 msgstr "Фамилия"
 
-#: .\account\templates\account\view.html:210
-msgid "Location"
-msgstr "Местоположение"
-
-#: .\account\templates\account\view.html:216
+#: .\account\templates\account\view.html:215
+#: .\account\templates\account\view.html:221
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: .\account\templates\account\view.html:222
+#: .\account\templates\account\view.html:227
 msgid "Registered"
 msgstr "Зарегистрирован"
 
-#: .\account\templates\account\view.html:232
-msgid "Your message"
-msgstr "Ваше сообщение"
+#: .\account\templates\account\view.html:233
+msgid "Location"
+msgstr "Местоположение"
 
-#: .\account\templates\account\view.html:235
+#: .\account\templates\account\view.html:257
+#, fuzzy
+#| msgid "Messages"
+msgid "Message"
+msgstr "Сообщения"
+
+#: .\account\templates\account\view.html:268
+#: .\posts\templates\posts\main.html:626 .\templates\bg2.html:217
+msgid "Write here.."
+msgstr "Напишите здесь.."
+
+#: .\account\templates\account\view.html:270
 #: .\messanger\templates\messanger\main.html:567
-#: .\posts\templates\posts\main.html:600
+#: .\posts\templates\posts\main.html:628
 msgid "Send"
 msgstr "Отправить"
 
@@ -92,12 +84,14 @@ msgstr "АВТОРИЗАЦИЯ"
 
 #: .\authentication\templates\authentication\login.html:146
 #: .\authentication\templates\authentication\registration.html:147
-#: .\templates\bg2.html:193
+#: .\templates\base.html:47 .\templates\base.html:71 .\templates\base.html:87
+#: .\templates\bg2.html:218
 msgid "Login"
 msgstr "Войти"
 
 #: .\authentication\templates\authentication\login.html:150
 #: .\authentication\templates\authentication\registration.html:151
+#: .\templates\base.html:84 .\templates\base.html:117
 msgid "Password"
 msgstr "Пароль"
 
@@ -111,6 +105,7 @@ msgid "LOGIN"
 msgstr "ВОЙТИ"
 
 #: .\authentication\templates\authentication\login.html:163
+#: .\templates\base.html:89
 msgid "Don't have an account yet?"
 msgstr "Eще нет аккаунта?"
 
@@ -119,7 +114,7 @@ msgid "Enter correct data for authorization"
 msgstr "Введите правильные данные для авторизации"
 
 #: .\authentication\templates\authentication\logout.html:4
-#: .\templates\bg2.html:198
+#: .\templates\base.html:61 .\templates\bg2.html:223
 msgid "Logout"
 msgstr "Выход"
 
@@ -132,6 +127,7 @@ msgid "Redirect to homepage after 2 seconds."
 msgstr "Редирект на главную через 2 секунды."
 
 #: .\authentication\templates\authentication\registration.html:4
+#: .\templates\base.html:100
 msgid "Registration"
 msgstr "Регистрация"
 
@@ -155,33 +151,29 @@ msgstr "Такой пользователь уже существует."
 msgid "Email entered incorrectly."
 msgstr "Электронная почта введена неправильно."
 
-#: .\categoryes\templates\categoryes\main.html:548
-#: .\main\templates\main\main.html:552 .\posts\templates\posts\main.html:538
-#: .\posts\templates\posts\main.html:589
+#: .\categoryes\templates\categoryes\main.html:556
+#: .\main\templates\main\main.html:561 .\posts\templates\posts\main.html:559
+#: .\posts\templates\posts\main.html:610
 msgid "ago"
 msgstr "назад"
 
-#: .\categoryes\templates\categoryes\main.html:561
-msgid "from"
-msgstr "из"
-
-#: .\invilso_scripts\settings.py:255
+#: .\invilso_scripts\settings.py:261
 msgid "English"
 msgstr "Английский"
 
-#: .\invilso_scripts\settings.py:256
+#: .\invilso_scripts\settings.py:262
 msgid "Russian"
 msgstr "Русский"
 
-#: .\invilso_scripts\settings.py:257
+#: .\invilso_scripts\settings.py:263
 msgid "Ukrainian"
 msgstr "Украинский"
 
-#: .\main\templates\main\main.html:539
+#: .\main\templates\main\main.html:540
 msgid "New posts"
 msgstr "Новые посты"
 
-#: .\main\templates\main\main.html:566
+#: .\main\templates\main\main.html:580
 msgid "New users"
 msgstr "Новые пользователи"
 
@@ -197,83 +189,117 @@ msgstr "Диалоги загружаются"
 msgid "Choose a dialogue"
 msgstr "Выберите диалог"
 
-#: .\posts\templates\posts\main.html:549
+#: .\posts\templates\posts\main.html:569
 msgid "Buy for $"
 msgstr "Купить за $"
 
-#: .\posts\templates\posts\main.html:562
+#: .\posts\templates\posts\main.html:584
 msgid "Subcategories"
 msgstr "Подкатегории"
 
-#: .\posts\templates\posts\main.html:574
+#: .\posts\templates\posts\main.html:593
 msgid "Comments"
 msgstr "Комментарии"
 
-#: .\templates\bg2.html:103
-msgid "Other Services"
-msgstr "Другие сервисы"
+#: .\templates\base.html:10
+msgid "A place where I unload my public programs and offer them for sale."
+msgstr ""
+"Место, куда я загружаю свои публичные и не только программы а также продаю их"
 
-#: .\templates\bg2.html:106
-msgid "About Us"
-msgstr "О нас"
+#: .\templates\base.html:11
+msgid ""
+"portfolio, development, sales, web development, programming, lua scripts, "
+"trinity, scripts, lua, samp, lingua, language, english, learn"
+msgstr ""
+"портфолио, разработка, продажи, веб-разработка, программирование, lua "
+"скрипты, тринити, скрипты, lua, samp, lingua, язык, английский, изучать, "
+"выучить, учить, гта"
 
-#: .\templates\bg2.html:118
-msgid "Resources"
-msgstr "Ресурсы"
+#: .\templates\base.html:38
+msgid "Search"
+msgstr "Поиск"
 
-#: .\templates\bg2.html:122
-msgid "Privacy policy"
-msgstr "Политика конфиденциальности"
+#: .\templates\base.html:56 .\templates\bg2.html:222
+msgid "Messages"
+msgstr "Сообщения"
 
-#: .\templates\bg2.html:123
-msgid "License agreement"
-msgstr "Лицензионное соглашение"
-
-#: .\templates\bg2.html:124
-msgid "Consent to data processing"
-msgstr "Согласие на обработку данных"
-
-#: .\templates\bg2.html:125
-msgid "Refund policy"
-msgstr "Политика возврата"
-
-#: .\templates\bg2.html:134
-msgid "Contacts"
-msgstr "Контакты"
-
-#: .\templates\bg2.html:166
-msgid "Functional"
-msgstr "Функционал"
-
-#: .\templates\bg2.html:167
-msgid "Theme"
-msgstr "Тема"
-
-#: .\templates\bg2.html:192
-msgid "Write here.."
-msgstr "Напишите здесь.."
-
-#: .\templates\bg2.html:194
+#: .\templates\base.html:58 .\templates\bg2.html:219
 msgid "Create post"
 msgstr "Создать пост"
 
-#: .\templates\bg2.html:195
+#: .\templates\base.html:80 .\templates\base.html:109
+#, fuzzy
+#| msgid "Surname"
+msgid "Username "
+msgstr "Имя пользователя"
+
+#: .\templates\base.html:120
+#, fuzzy
+#| msgid "Already have an account?"
+msgid "Create an account"
+msgstr "У вас уже есть аккаунт?"
+
+#: .\templates\base.html:134
+#, fuzzy
+#| msgid "Choose a dialogue"
+msgid "Choose Language"
+msgstr "Выберите диалог"
+
+#: .\templates\base.html:270 .\templates\bg2.html:123
+msgid "Other Services"
+msgstr "Другие сервисы"
+
+#: .\templates\base.html:273 .\templates\bg2.html:126
+msgid "About Us"
+msgstr "О нас"
+
+#: .\templates\base.html:286 .\templates\bg2.html:138
+msgid "Resources"
+msgstr "Ресурсы"
+
+#: .\templates\base.html:289 .\templates\bg2.html:142
+msgid "Privacy policy"
+msgstr "Политика конфиденциальности"
+
+#: .\templates\base.html:292 .\templates\bg2.html:143
+msgid "License agreement"
+msgstr "Лицензионное соглашение"
+
+#: .\templates\base.html:295 .\templates\bg2.html:144
+msgid "Consent to data processing"
+msgstr "Согласие на обработку данных"
+
+#: .\templates\base.html:298 .\templates\bg2.html:145
+msgid "Refund policy"
+msgstr "Политика возврата"
+
+#: .\templates\base.html:305 .\templates\bg2.html:154
+msgid "Contacts"
+msgstr "Контакты"
+
+#: .\templates\bg2.html:186
+msgid "Functional"
+msgstr "Функционал"
+
+#: .\templates\bg2.html:187
+msgid "Theme"
+msgstr "Тема"
+
+#: .\templates\bg2.html:220
 msgid "Menu"
 msgstr "Меню"
 
-#: .\templates\bg2.html:196
+#: .\templates\bg2.html:221
 msgid "Profile"
 msgstr "Профиль"
-
-#: .\templates\bg2.html:197
-msgid "Messages"
-msgstr "Сообщения"
 
 #: .\templates\error.html:24
 msgid ""
 "An error has occurred on the server. Report it to any of the contacts listed "
 "below."
-msgstr "Произошла ошибка на сервере. Сообщите об этом любому из контактов, указанных ниже."
+msgstr ""
+"Произошла ошибка на сервере. Сообщите об этом любому из контактов, указанных "
+"ниже."
 
 #: .\templates\error.html:25
 msgid "Specify the exact time when the error occurred."

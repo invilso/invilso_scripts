@@ -3,7 +3,7 @@ function updateSummernoteStatus() {
     $('#summernote').summernote('fontName', 'Arial');
     $('#summernote').summernote('fontSize', 18);
     $('#summernote').summernote('foreColor', 'black');
-    $('#summernote').summernote('color', 'black');
+    $('#summernote').summernote('color', 'black'); 
     $('#summernote').summernote('lineHeight', 1);
 }
 

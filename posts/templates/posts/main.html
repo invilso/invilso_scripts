@@ -1,4 +1,4 @@
-{% extends "bg2.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 {% block title %}
 {{ post.title }}
@@ -6,7 +6,7 @@
 
 {% block head %}
     {% load static %}
-    <style>
+    {% comment %} <style>
         body{margin-top:20px;}
         /*************** 1.Variables ***************/
 
@@ -521,97 +521,115 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="{% static 'global/css/summernote.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'global/css/summernote.css' %}"/> {% endcomment %}
+    <style>
+        .rounded-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid #FFFFFF;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
-<section class="inner-blog pt-20 pb-70">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-11">
-                <div class="blog-details-wrap">
-                    <div class="meta__info">
-                        <ul>
-                            <li><a href="{% url 'account:view' username=post.owner %}"><i class="far fa-user"></i>{{post.owner}}</a></li>
-                            <li><i class="far fa-comments"></i>{{ post.comments.count }}</li>
-                            <li>{{ post.timestamp|timesince }} {% trans "ago" %}</li>
-                        </ul>
-                    </div>
-                    <div class="details__content pb-50">
-                        <h2>{{post.title}}</h2>
-                        <div class="details__content-img">
-                            <img src="{{ MEDIA_URL }}{{post.photo.file}}" alt="{{post.title}}" width="912" height="520">
-                        </div>
-                        {{post.text|safe}}
-                        <div class="comment__wrap mt-60 pb-20">
-                            {% if post.price > 0 %}
-                            <a href="" class="btn">{% trans "Buy for $" %}{{post.price}}</a> 
-                            <br>
-                            <img src="{% static 'global/img/logo/visa.png' %}" alt="visa" width="35" height="30" style="margin-top: 10px">
-                            <img src="{% static 'global/img/logo/mastercard.png' %}" alt="mastercard" width="35" height="30" style="margin-left: 17px; margin-top: 10px">
-                            {% elif post.price == 0 %}
-                            {% for f in post.file.all %}
-                            <a href="{% url 'files:download' pk=f.id %}" class="btn">{{f.file.name}}<br>{{f.file.size|filesizeformat}}</a>
-                            {% endfor %}
-                            {% endif %}
-                        </div>
-                        <div class="comment__wrap mt-50 pb-45">
-                            <div class="post__tag">
-                                <div class="comment__wrap-title">
-                                    <h5>{% trans "Subcategories" %}</h5>
-                                </div>
-                                <ul>
-                                    {% for subcat in post.subcategoryes.all %}
-                                    <li><a href="">{{subcat.name}}</a></li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comment__wrap pb-35 mb-35">
-                        <div class="comment__wrap-title">
-                            <h5>{% trans "Comments" %}</h5>
-                        </div>
-                        {% for comment in post.comments.all %}
-                        {% if comment.text != 'test' %}
-                        <div class="single__comment mb-35">
-                            <div class="comments-avatar">
-                                {% if comment.owner.profile.photo.file %}
-                                <img src="{{ MEDIA_URL }}{{comment.owner.profile.photo.file}}" alt="" width="90" height="90">
-                                {% else %}
-                                <img src="https://brilliant24.ru/files/cat/template_01.png" alt="" width="90" height="90">
-                                {% endif %}
-                            </div>
-                            <div class="comment-text">
-                                <div class="avatar-name mb-25">
-                                    <h6>{{comment.owner}}</h6>
-                                    <span>{{ comment.timestamp|timesince }} {% trans "ago" %}</span>
-                                </div>
-                                <p>{{comment.text|safe}}</p>
-                            </div>
-                        </div>
-                        {%endif%}
-                        {% endfor %}
-                    </div>
-                    <div class="post-comments-form mb-20 mt-20" id='summer'>
-                        <div id="summernote"></div>
-                        <div class="comment-box"> 
-                            <button type="button" class="btn" id='send'>{% trans "Send" %}</button>
-                        </div>
-                    </div>
-                </div>
+<div class="col-lg-11 ">
+    <h2 class="text-center my-3">{{post.title}}</h2>
+    <img src="{{ MEDIA_URL }}{{post.photo.file}}" class="card-img-top" alt="Post Image">
+    <div class="card-body mt-2">
+        <!-- Автор и иконка пользователя -->
+        <div class="d-flex align-items-center mb-2">
+            <div class="d-flex align-items-center me-3">
+                <i class="far fa-user me-1 text-primary"></i>
+                <a class='text-primary' href="{% url 'account:view' username=post.owner %}" style="text-decoration: none;">{{post.owner}}</a>
             </div>
+            <div class="d-flex align-items-center me-3">
+                <i class="fas fa-comments me-1"></i>
+                <span>{{ post.comments.count }}</span>
+            </div>
+            <div class="d-flex align-items-center me-3">
+                <i class="fas fa-eye me-1"></i>
+                <span>100</span>
+            </div>
+            <div class="text-muted">{{ post.timestamp|timesince }} {% trans "ago" %}</div>
+        </div>
+        <!-- Краткое содержание поста -->
+        <div class="col-12 col-md-12">
+            {{ post.text| safe }}
         </div>
     </div>
-</section>
+    <div class='row' style='margin-top: 20pt;'>
+        <div style='margin-top: 20pt;' class='col-md-3 justify-content-center'>
+            {% if post.price > 0 %}
+            <a href="" class="btn btn-warning">{% trans "Buy for $" %}{{post.price}}</a> 
+            <br>
+            <img src="{% static 'global/img/logo/visa.png' %}" alt="visa" width="35" height="30" style="margin-top: 10pt;">
+            <img src="{% static 'global/img/logo/mastercard.png' %}" alt="mastercard" width="35" height="30" style="margin-left: 17px; margin-top: 10pt;">
+            {% elif post.price == 0 %}
+            {% for f in post.file.all %}
+            <a href="{% url 'files:download' pk=f.id %}" class="btn btn-primary">{{f.file.name}}<br>{{f.file.size|filesizeformat}}</a>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <hr style='margin-top: 30pt;'>
+    <div class="comment__wrap mt-50 pb-45">
+        <div class="post__tag">
+            <div class="comment__wrap-title">
+                <h4>{% trans "Subcategories" %}</h4>
+            </div>
+                {% for subcat in post.subcategoryes.all %}
+                <button type="button" class="btn btn-light disabled">{{subcat.name}}</button>
+                {% endfor %}
+        </div>
+    </div>
+    <hr style='margin-top: 20pt;'>
+    <div class="comment__wrap pb-35 mb-35">
+        <h4>{% trans "Comments" %}</h5>
+        <div class="comment-widgets m-b-20">
+            {% for comment in post.comments.all %}
+                {% if comment.text != 'test' %}
+                    <div class="d-flex flex-row comment-row">
+                        <div class="p-2">
+                            <span class="round">
+                                {% if comment.owner.profile.photo.file %}
+                                <img class="rounded-image" src="{{ MEDIA_URL }}{{ comment.owner.profile.photo.file }}" alt="{{ comment.owner }}" width="50" height='50'>
+                                {% else %}
+                                <img class="rounded-image" src="https://brilliant24.ru/files/cat/template_01.png" alt="{{comment.owner}}" width="50" height='50'>
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="comment-text w-75">
+                            <h6>{{comment.owner}}</h6>
+                            <div class="comment-footer">
+                                <span class="date">{{ comment.timestamp|timesince }} {% trans "ago" %}</span>
+                            </div>
+                            <p class="m-b-5 m-t-10">{{comment.text|safe}}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+    <form class="form-inline my-2 my-lg-0 d-flex flex-row" action="{% url 'comments:create' %}" method="post">
+        {% csrf_token %}
+        <input id="token-input" style='display: none;' class="form-control mr-sm-2" type="token" name="token" placeholder="Search" value='{{ user.auth_token }}'>
+        <input id="sender-input" style='display: none;' class="form-control mr-sm-2" type="sender" name="sender" placeholder="Search" value='{{ user.username }}'>
+        <input id="search-input" style='display: none;' class="form-control mr-sm-2" type="rating" name="rating" placeholder="Search" value='3'>
+        <input id="search-input" style='display: none;' class="form-control mr-sm-2" type="receiver" name="receiver" placeholder="Search" value='{{post.id}}'>
+        <textarea id="comment-input"  class="form-control" placeholder="{% trans "Write here.." %}" rows="3" type="text" name="text"></textarea>
+        <button id="comment-button" style="margin-left: 3pt;" type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> {% trans "Send" %}
+        </button>                     
+    </form>
+    {% endif %}
+    
+</div>
 {% endblock %}
 
 {% block javascript %}
-    <script>
-        const POST_ID = "{{post.id}}"
-    </script>
-    <script src="{% static 'global/js/summernote.js' %}"></script>
-    <script src="{% static 'global/lang/summernote-ru-RU.min.js' %}"></script>
-    <script src="{% static 'posts/js/comment.js' %}"></script>
 {% endblock %}

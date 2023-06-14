@@ -16,7 +16,7 @@ $(document).ready(function(){
         },
         error: function(msg){
             alert('Невозможно получить список категорий')
-        }
+        } 
     });
     if (!sessionStorage.getItem('username')){
         $("#button-login").text(LOGIN_TEXT)

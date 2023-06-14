@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic.list import ListView
 from django.http import JsonResponse
 from comments.services.create import createComment
@@ -9,5 +9,6 @@ import json
 @method_decorator(csrf_exempt, name='dispatch')
 class CommentCreateAPI(ListView):
     def post(self, request):
-        response = createComment(json.loads(request.body.decode('utf-8')))
+        response = createComment(request.POST)
+        return redirect(request.META.get('HTTP_REFERER'))
         return JsonResponse(response)

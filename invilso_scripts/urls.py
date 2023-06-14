@@ -38,10 +38,7 @@ urlpatterns = [
 ] 
 
 urlpatterns += i18n_patterns(
-    path('admin/', admin.site.urls),
-    path('', include('main.urls', namespace = 'main')),
-    path('categoryes/', include('categoryes.urls', namespace = 'categoryes')),
-    path('posts/', include('posts.urls', namespace = 'posts')),
+    path('admin/', admin.site.urls)
 )
 
 if settings.DEBUG:

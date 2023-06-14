@@ -4,7 +4,7 @@ from rest_framework import permissions
 from django.views.generic.list import ListView
 from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from categoryes.services.get import getPosts, getCategory
+from categoryes.services.get import getCategoryPosts, getCategory, getSearchPosts
 from django.utils.datastructures import MultiValueDictKeyError
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -34,9 +34,9 @@ class SubcategoryAPIView(RetrieveUpdateDestroyAPIView):
 class CategoryView(ListView):
     def get(self, request, **kwargs): 
         try:
-            posts = getPosts(kwargs['pk'], request.GET['search'])
+            posts = getCategoryPosts(kwargs['pk'], request.GET['search'])
         except MultiValueDictKeyError:
-            posts = getPosts(kwargs['pk'], '')
+            posts = getCategoryPosts(kwargs['pk'], '')
         category = getCategory(kwargs['pk'])
         
         paginator = Paginator(posts, 5) ##posts in page
