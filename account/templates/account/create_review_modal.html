@@ -1,0 +1,89 @@
+{% load i18n %}
+<div class="modal fade" id="createReviewModal" tabindex="-1" role="dialog" aria-labelledby="createReviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title" id="createReviewModalLabel">{% trans "Create review" %}</h5>
+             <button type="button" class="btn btn-light btn-sm" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+          </div>
+          <div class="modal-body">
+             <form method="POST" action="{% url 'account:view' username=account.username %}">
+                {% csrf_token %}
+                <div class="form-group">
+                   <label for="name">{% trans 'Your name or company name' %}:</label>
+                   <input type="text" name="name" id="name" class="form-control" >
+                </div>
+                <div class="form-group">
+                   <label for="name">{% trans 'Brief Job Description' %}:</label>
+                   <input type="text" name="task_description" id="task_description" class="form-control">
+                </div>
+                <div class="form-group">
+                   <label for="name">{% trans 'Feedback on the Performer' %}:</label>
+                   <textarea id="comment-input"  class="form-control"  rows="3" type="text" name="review"></textarea>
+                </div>
+                <div class="form-group">
+                   <div class="rating-container">
+                      <div class="rating-stars">
+                         <input type="hidden" name="quality_of_service" class="rating-input" value="0" />
+                         <span class="star" data-rating="1"></span>
+                         <span class="star" data-rating="2"></span>
+                         <span class="star" data-rating="3"></span>
+                         <span class="star" data-rating="4"></span>
+                         <span class="star" data-rating="5"></span>
+                      </div>
+                      <div class="rating-text">{% trans 'Quality of service/work' %}</div>
+                   </div>
+                   <div class="rating-container">
+                      <div class="rating-stars">
+                         <input type="hidden" name="adherence_to_deadlines" class="rating-input" value="0" />
+                         <span class="star" data-rating="1"></span>
+                         <span class="star" data-rating="2"></span>
+                         <span class="star" data-rating="3"></span>
+                         <span class="star" data-rating="4"></span>
+                         <span class="star" data-rating="5"></span>
+                      </div>
+                      <div class="rating-text">{% trans 'Adherence to deadlines' %}</div>
+                   </div>
+                   <div class="rating-container">
+                      <div class="rating-stars">
+                         <input type="hidden" name="communication_responsiveness" class="rating-input" value="0" />
+                         <span class="star" data-rating="1"></span>
+                         <span class="star" data-rating="2"></span>
+                         <span class="star" data-rating="3"></span>
+                         <span class="star" data-rating="4"></span>
+                         <span class="star" data-rating="5"></span>
+                      </div>
+                      <div class="rating-text">{% trans 'Communication and responsiveness' %}</div>
+                   </div>
+                   <div class="rating-container">
+                      <div class="rating-stars">
+                         <input type="hidden" name="price_value_ratio" class="rating-input" value="0" />
+                         <span class="star" data-rating="1"></span>
+                         <span class="star" data-rating="2"></span>
+                         <span class="star" data-rating="3"></span>
+                         <span class="star" data-rating="4"></span>
+                         <span class="star" data-rating="5"></span>
+                      </div>
+                      <div class="rating-text">{% trans 'Price/quality ratio' %}</div>
+                   </div>
+                   <div class="rating-container">
+                      <div class="rating-stars">
+                         <input type="hidden" name="overall_satisfaction" class="rating-input" value="0" />
+                         <span class="star" data-rating="1"></span>
+                         <span class="star" data-rating="2"></span>
+                         <span class="star" data-rating="3"></span>
+                         <span class="star" data-rating="4"></span>
+                         <span class="star" data-rating="5"></span>
+                      </div>
+                      <div class="rating-text">{% trans 'Overall satisfaction' %}</div>
+                   </div>
+                </div>
+                <div class="cf_widget"></div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> {% trans "Send" %}</button>
+             </form>
+          </div>
+       </div>
+    </div>
+ </div>

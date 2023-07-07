@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+Statistic
+{% endblock %}
+{% block content %}
+<div class="container">
+	<h2 class="mt-2">Statistic</h2>
+	<br>
+	<div>
+		{{ plot_div|safe }}
+	</div>
+    <a class="btn btn-dark" href="{% url 'posts:view' pk=post.pk%}">Назад</a>
+</div>
+{% endblock %}

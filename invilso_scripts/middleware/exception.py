@@ -2,6 +2,7 @@ import sys
 from django.shortcuts import render
 import traceback
 import logging
+from django.conf import settings
 logger = logging.getLogger('exception_handler')
 
 class ExceptionMiddleware():
@@ -12,10 +13,11 @@ class ExceptionMiddleware():
         return self.get_response(request)
         
     def process_exception(self, request, exception):
-        try:
-            _, _, stacktrace = sys.exc_info()
-            logger.error("""Processing exception %s at %s.\nGET %s\nTraceback %s""", exception, request.path, request.GET, ''.join(traceback.format_tb(stacktrace)))
-            return render(request, 'error.html', {'exception': exception})
-        except Exception:
-            pass
-        return None
+        if not settings.DEBUG:
+            try:
+                _, _, stacktrace = sys.exc_info()
+                logger.error("""Processing exception %s at %s.\nGET %s\nTraceback %s""", exception, request.path, request.GET, ''.join(traceback.format_tb(stacktrace)))
+                return render(request, 'error.html', {'exception': exception})
+            except Exception:
+                pass
+            return None

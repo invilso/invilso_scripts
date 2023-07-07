@@ -1,0 +1,84 @@
+{% load i18n %}
+
+<div class="card user-card-full">
+    <div class="row m-l-0 m-r-0">
+       <div class="col-sm-4 bg-c-lite-green user-profile">
+          <div class="card-block text-center text-white">
+             {% if account.is_superuser %}
+             <h6 class="f-w-600">{% trans "Owner" %}</h6>
+             {% elif account.is_staff %}
+             <h6 class="f-w-600">{% trans "Admin" %}</h6>
+             {% endif %}
+             <div class="m-b-25">
+                {% if account.profile.photo %}
+                <img class="img-radius" src="{{ MEDIA_URL }}{{ account.profile.photo.file }}" width="110" height="106" alt="{{ account.username }}" />
+                {% else %}
+                <img class="img-radius" src="https://brilliant24.ru/files/cat/template_01.png" width="110" height="106" alt="{{ account.username }}" />
+                {% endif %}
+             </div>
+             <h5 class="f-w-600">{{ account.username }}</h5>
+             <p>{{ account.profile.description }}</p>
+             {% if user.is_authenticated %}
+             {% if user.username == account.username %}
+             <button type="button" class="btn" data-toggle="modal" data-target="#sendModal" style='margin-left: 1pt;'>
+             <i class="fas fa-edit"></i>
+             </button>
+             {% endif %}
+             {% if not user.username == account.username %}
+             <button type="button" class="btn" data-toggle="modal" data-target="#sendModal" style='margin-left: 1pt;'>
+             <i class="fas fa-paper-plane"></i>
+             </button>
+             {% endif %}
+             {% endif %}
+          </div>
+       </div>
+       <div class="col-sm-8">
+          <div class="card-block">
+             <h6 class="m-b-20 p-b-5 b-b-default f-w-600">{% trans "About user" %}</h6>
+             <div class="row">
+                {% if account.profile.first_name %}
+                <div class="col-sm-6">
+                   <p class="m-b-10 f-w-600">{% trans "Name" %}</p>
+                   <h6 class="text-muted f-w-400">{{ account.profile.first_name }}</h6>
+                </div>
+                {% endif %}
+                {% if account.profile.last_name %}
+                <div class="col-sm-6">
+                   <p class="m-b-10 f-w-600">{% trans "Surname" %}</p>
+                   <h6 class="text-muted f-w-400">{{ account.profile.last_name }}</h6>
+                </div>
+                {% endif %}
+                {% if account.email %}
+                <div class="col-sm-6">
+                   <p class="m-b-10 f-w-600">{% trans "E-Mail" %}</p>
+                   <h6 class="text-muted f-w-400">{{ account.email }}</h6>
+                </div>
+                {% endif %}
+                {% if not account.email and not account.profile.last_name and not account.profile.first_name %}
+                <div class="col-sm-6">
+                   <p class="m-b-10 f-w-600">{% trans "E-Mail" %}</p>
+                   <h6 class="text-muted f-w-400">example@example.com</h6>
+                </div>
+                {% endif %}
+                {% if account.date_joined %}
+                <div class="col-sm-6">
+                   <p class="m-b-10 f-w-600">{% trans "Registered" %}</p>
+                   <h6 class="text-muted f-w-400">{{ account.date_joined }}</h6>
+                </div>
+                {% endif %}
+                {% if account.profile.location %}
+                <div class="col-sm-6">
+                   <p class="m-b-10 f-w-600">{% trans "Location" %}</p>
+                   <h6 class="text-muted f-w-400">{{ account.profile.location }}</h6>
+                </div>
+                {% endif %}
+             </div>
+             <ul class="social-link list-unstyled m-t-40 m-b-10">
+                <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="facebook" data-abc="true"><i class="mdi mdi-facebook feather icon-facebook facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="twitter" data-abc="true"><i class="mdi mdi-twitter feather icon-twitter twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram" data-abc="true"><i class="mdi mdi-instagram feather icon-instagram instagram" aria-hidden="true"></i></a></li>
+             </ul>
+          </div>
+       </div>
+    </div>
+ </div>

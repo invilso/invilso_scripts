@@ -1,0 +1,139 @@
+{% load i18n %}
+<div class="row">
+    <!-- customer reviews -->
+    <div class="col-lg-4 col-md-5 col-12 mb-4 mb-lg-0 pr-lg-6">
+       <div class="mb-6">
+          <h4 class="mb-3">{% trans 'Clients reviews'%}</h4>
+          <span class="font-14">
+             {% for x in range %}
+             {% if x > avg_rating %}
+             <i class="far fa-star text-warning"></i>
+             {% else %}
+             <i class="fas fa-star text-warning"></i>
+             {% endif %}
+             {% endfor %}
+          <span class="h5">{{avg_rating}} {% trans 'out of' %} 5</span>
+          <p class="font-14">{{ all_reviews_len }} {% trans 'clients ratings' %}</p>
+          {% for star_perc in stars_perc %}
+          <div class="row align-items-center mb-1 ">
+             <div class="col-md-2 col-2 pr-0">
+                <div class="font-12 text-dark">{{star_perc.stars}} <i class="fas fa-star text-warning"></i></div>
+             </div>
+             <div class="col-md-8 col-8 pr-2">
+                <div class="progress" style="height: 8px;">
+                   <div class="progress-bar
+                      bg-warning" role="progressbar" style="width: {{ star_perc.perc }}%" aria-valuenow="{{ star_perc.perc }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+             </div>
+             <div class="col-md-2 col-2">
+                <div class="font-12 text-primary">{{ star_perc.perc }}%</div>
+             </div>
+          </div>
+          {% endfor %}
+       </div>
+       <div>
+          <h4 class="mb-1 mt-5">{% trans 'Share your thoughts with others'%}</h4>
+          <button type="button" class="btn btn-primary mt-1" data-toggle="modal" data-target="#createReviewModal" style='margin-left: 1pt;'>
+          {% trans 'Write A Review'%}
+          </button>
+       </div>
+    </div>
+    <!-- customer reviews list -->
+    <div class="col-lg-8 col-md-7 col-12">
+       <div class="d-flex align-items-center justify-content-between mb-4">
+          <div>
+             <h4 class="mb-0">{% trans 'Reviews'%}</h4>
+          </div>
+          <div>
+            
+          </div>
+       </div>
+       {% if not reviews_all %}
+       <h5>{% trans 'No reviews yet' %}<h5>
+       {% else %}
+       {% for review in reviews_all %}
+       <div class="mb-4 pb-4 border-bottom">
+          <div class="d-flex mb-1 align-items-center">
+             <img src="../assets/images/avatar-1.png" alt="" class="rounded-circle avatar-lg">
+             <div class="ml-2">
+                <h5 class="mb-1">
+                   {{ review.name }}
+                   <img src="../assets/images/verified.svg" alt="">
+                </h5>
+                <p class="font-12 mb-0">
+                   <span>{{ review.date_created|date:"d.m.Y" }}</span>
+                </p>
+             </div>
+          </div>
+          <div class="mb-2 reviewstars">
+             <div class='mb-1 masterstar'>
+                <i class="fas fa-chevron-down" style='font-size: 10pt;'></i> 
+                <span class="font-14 mr-2">
+                   {% for x in range %}
+                   {% if x > review.overall_satisfaction %}
+                   <i class="far fa-star text-warning"></i>
+                   {% else %}
+                   <i class="fas fa-star text-warning"></i>
+                   {% endif %}
+                   {% endfor %}
+                </span>
+                <span style='font-size: 9pt;'>{% trans 'Overall satisfaction' %}</span>
+             </div>
+             <div class='mb-1 slavestar'>
+                <span class="font-14 mr-2">
+                   {% for x in range %}
+                   {% if x > review.quality_of_service %}
+                   <i class="far fa-star text-warning"></i>
+                   {% else %}
+                   <i class="fas fa-star text-warning"></i>
+                   {% endif %}
+                   {% endfor %}
+                </span>
+                <span style='font-size: 9pt;'>{% trans 'Quality of service/work' %}</span>
+             </div>
+             <div class='mb-1 slavestar'>
+                <span class="font-14 mr-2">
+                   {% for x in range %}
+                   {% if x > review.adherence_to_deadlines %}
+                   <i class="far fa-star text-warning"></i>
+                   {% else %}
+                   <i class="fas fa-star text-warning"></i>
+                   {% endif %}
+                   {% endfor %}
+                </span>
+                <span style='font-size: 9pt;'>{% trans 'Adherence to deadlines' %}</span>
+             </div>
+             <div class='mb-1 slavestar'>
+                <span class="font-14 mr-2">
+                   {% for x in range %}
+                   {% if x > review.communication_responsiveness %}
+                   <i class="far fa-star text-warning"></i>
+                   {% else %}
+                   <i class="fas fa-star text-warning"></i>
+                   {% endif %}
+                   {% endfor %}
+                </span>
+                <span style='font-size: 9pt;'>{% trans 'Communication and responsiveness' %}</span>
+             </div>
+             <div class='mb-1 slavestar'>
+                <span class="font-14 mr-2">
+                   {% for x in range %}
+                   {% if x > review.price_value_ratio %}
+                   <i class="far fa-star text-warning"></i>
+                   {% else %}
+                   <i class="fas fa-star text-warning"></i>
+                   {% endif %}
+                   {% endfor %}
+                </span>
+                <span style='font-size: 9pt;'>{% trans 'Price/quality ratio' %}</span>
+             </div>
+          </div>
+          <span class="h5">{{ review.task_description }}</span>
+          <p>
+             {{ review.review }}
+          </p>
+       </div>
+       {% endfor %}
+       {% endif %}
+    </div>
+ </div>

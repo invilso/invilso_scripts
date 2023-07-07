@@ -1,0 +1,31 @@
+{% load i18n %}
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">{% trans "Login" %}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form action="{% url 'authentication:login' %}" method="post">
+                  {% csrf_token %}
+                  <div class="form-group">
+                      <label for="username">{% trans "Username " %}</label>
+                      <input type="text" class="form-control" id="username" name="username" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="password">{% trans "Password" %}</label>
+                      <input type="password" class="form-control" id="password" name="password" required>
+                  </div>
+                  <div class="cf_widget" style='margin-top: 5pt;'></div>
+                  <button type="submit" class="btn btn-primary mt-2">{% trans "Login" %}</button> 
+                  <a href="#" class="mt-2 btn btn-primary" data-toggle="modal" data-target="#registerModal">
+                      {% trans "Don't have an account yet?" %}
+                  </a>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

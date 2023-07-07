@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-15 01:31+0300\n"
+"POT-Creation-Date: 2023-07-07 21:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,63 +16,138 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\account\templates\account\view.html:5
-msgid "View profile"
-msgstr "Профиль"
+#: .\account\templates\account\create_review_modal.html:6
+msgid "Create review"
+msgstr "Создать отзыв"
 
-#: .\account\templates\account\view.html:168
-msgid "Owner"
-msgstr "Создатель"
+#: .\account\templates\account\create_review_modal.html:15
+msgid "Your name or company name"
+msgstr "Ваше имя или название компании"
 
-#: .\account\templates\account\view.html:170
-msgid "Admin"
-msgstr "Админ"
+#: .\account\templates\account\create_review_modal.html:19
+msgid "Brief Job Description"
+msgstr "Краткое описание работы"
 
-#: .\account\templates\account\view.html:199
-msgid "About user"
-msgstr "О пользователе"
+#: .\account\templates\account\create_review_modal.html:23
+msgid "Feedback on the Performer"
+msgstr "Отзыв о исполнителе"
 
-#: .\account\templates\account\view.html:203
-msgid "Name"
-msgstr "Имя"
+#: .\account\templates\account\create_review_modal.html:36
+#: .\account\templates\account\reviews.html:92
+msgid "Quality of service/work"
+msgstr "Качество услуг/работы"
 
-#: .\account\templates\account\view.html:209
-msgid "Surname"
-msgstr "Фамилия"
+#: .\account\templates\account\create_review_modal.html:47
+#: .\account\templates\account\reviews.html:104
+msgid "Adherence to deadlines"
+msgstr "Соблюдение сроков"
 
-#: .\account\templates\account\view.html:215
-#: .\account\templates\account\view.html:221
-msgid "E-Mail"
-msgstr "E-Mail"
+#: .\account\templates\account\create_review_modal.html:58
+#: .\account\templates\account\reviews.html:116
+msgid "Communication and responsiveness"
+msgstr "Коммуникация и отзывчивость"
 
-#: .\account\templates\account\view.html:227
-msgid "Registered"
-msgstr "Зарегистрирован"
+#: .\account\templates\account\create_review_modal.html:69
+#: .\account\templates\account\reviews.html:128
+msgid "Price/quality ratio"
+msgstr "Соотношение цена/качество"
 
-#: .\account\templates\account\view.html:233
-msgid "Location"
-msgstr "Местоположение"
+#: .\account\templates\account\create_review_modal.html:80
+#: .\account\templates\account\reviews.html:80
+msgid "Overall satisfaction"
+msgstr "Общее удовлетворение"
 
-#: .\account\templates\account\view.html:257
-#, fuzzy
-#| msgid "Messages"
-msgid "Message"
-msgstr "Сообщения"
-
-#: .\account\templates\account\view.html:268
-#: .\posts\templates\posts\main.html:626 .\templates\bg2.html:217
-msgid "Write here.."
-msgstr "Напишите здесь.."
-
-#: .\account\templates\account\view.html:270
+#: .\account\templates\account\create_review_modal.html:84
+#: .\account\templates\account\send_message_modal.html:19
 #: .\messanger\templates\messanger\main.html:567
 #: .\posts\templates\posts\main.html:628
 msgid "Send"
-msgstr "Отправить"
+msgstr "Прислать"
+
+#: .\account\templates\account\reviews.html:6
+msgid "Clients reviews"
+msgstr "Отзывы клиентов"
+
+#: .\account\templates\account\reviews.html:15
+msgid "out of"
+msgstr "из"
+
+#: .\account\templates\account\reviews.html:16
+msgid "clients ratings"
+msgstr "оценки клиентов"
+
+#: .\account\templates\account\reviews.html:35
+msgid "Share your thoughts with others"
+msgstr "Поделитесь своими мыслями с другими"
+
+#: .\account\templates\account\reviews.html:37
+msgid "Write A Review"
+msgstr "Написать отзыв"
+
+#: .\account\templates\account\reviews.html:45
+msgid "Reviews"
+msgstr "Отзывы"
+
+#: .\account\templates\account\reviews.html:52
+msgid "No reviews yet"
+msgstr "Отзывов пока нет"
+
+#: .\account\templates\account\send_message_modal.html:6
+msgid "Message"
+msgstr "Сообщение"
+
+#: .\account\templates\account\send_message_modal.html:17
+#: .\posts\templates\posts\main.html:626 .\templates\bg2.html:217
+msgid "Write here.."
+msgstr "Напишите здесь."
+
+#: .\account\templates\account\user_card.html:8
+msgid "Owner"
+msgstr "Владелец"
+
+#: .\account\templates\account\user_card.html:10
+msgid "Admin"
+msgstr "Администратор"
+
+#: .\account\templates\account\user_card.html:37
+msgid "About user"
+msgstr "О пользователе"
+
+#: .\account\templates\account\user_card.html:41
+msgid "Name"
+msgstr "Имя"
+
+#: .\account\templates\account\user_card.html:47
+msgid "Surname"
+msgstr "Фамилия"
+
+#: .\account\templates\account\user_card.html:53
+#: .\account\templates\account\user_card.html:59
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: .\account\templates\account\user_card.html:65
+msgid "Registered"
+msgstr "Зарегистрирован"
+
+#: .\account\templates\account\user_card.html:71
+msgid "Location"
+msgstr "Местонахождение"
+
+#: .\account\templates\account\view.html:4
+msgid "View profile"
+msgstr "Просмотр профиля"
+
+#: .\account\views.py:109 .\authentication\views.py:30
+#: .\authentication\views.py:38
+msgid "Failed to pass the anti-bot protection."
+msgstr "Не пройдена анти-ботовая защита."
+
+#: .\account\views.py:114
+msgid "Review has been successfully added."
+msgstr "Отзыв был успешно добавлен."
 
 #: .\authentication\templates\authentication\login.html:4
 msgid "Authorization"
@@ -84,14 +159,14 @@ msgstr "АВТОРИЗАЦИЯ"
 
 #: .\authentication\templates\authentication\login.html:146
 #: .\authentication\templates\authentication\registration.html:147
-#: .\templates\base.html:47 .\templates\base.html:71 .\templates\base.html:87
-#: .\templates\bg2.html:218
+#: .\templates\base.html:48 .\templates\bg2.html:218
+#: .\templates\login_modal.html:6 .\templates\login_modal.html:23
 msgid "Login"
 msgstr "Войти"
 
 #: .\authentication\templates\authentication\login.html:150
 #: .\authentication\templates\authentication\registration.html:151
-#: .\templates\base.html:84 .\templates\base.html:117
+#: .\templates\login_modal.html:19 .\templates\register_modal.html:24
 msgid "Password"
 msgstr "Пароль"
 
@@ -105,29 +180,29 @@ msgid "LOGIN"
 msgstr "ВОЙТИ"
 
 #: .\authentication\templates\authentication\login.html:163
-#: .\templates\base.html:89
+#: .\templates\login_modal.html:25
 msgid "Don't have an account yet?"
-msgstr "Eще нет аккаунта?"
+msgstr "У вас еще нет аккаунта?"
 
 #: .\authentication\templates\authentication\login.html:178
 msgid "Enter correct data for authorization"
 msgstr "Введите правильные данные для авторизации"
 
 #: .\authentication\templates\authentication\logout.html:4
-#: .\templates\base.html:61 .\templates\bg2.html:223
+#: .\templates\base.html:62 .\templates\bg2.html:223
 msgid "Logout"
 msgstr "Выход"
 
 #: .\authentication\templates\authentication\logout.html:140
 msgid "You have successfully logged out of your account."
-msgstr "Вы успешно вышли из своей учетной записи."
+msgstr "Вы успешно вышли из учетной записи."
 
 #: .\authentication\templates\authentication\logout.html:141
 msgid "Redirect to homepage after 2 seconds."
-msgstr "Редирект на главную через 2 секунды."
+msgstr "Перенаправление на домашнюю страницу через 2 секунды."
 
 #: .\authentication\templates\authentication\registration.html:4
-#: .\templates\base.html:100
+#: .\templates\register_modal.html:7
 msgid "Registration"
 msgstr "Регистрация"
 
@@ -149,7 +224,19 @@ msgstr "Такой пользователь уже существует."
 
 #: .\authentication\templates\authentication\registration.html:186
 msgid "Email entered incorrectly."
-msgstr "Электронная почта введена неправильно."
+msgstr "Адрес электронной почты введен неправильно."
+
+#: .\authentication\views.py:19
+msgid "You are successfully logged into your account."
+msgstr "Вы успешно вошли в свою учетную запись."
+
+#: .\authentication\views.py:22 .\authentication\views.py:55
+msgid "Invalid username or password."
+msgstr "Неверное имя пользователя или пароль."
+
+#: .\authentication\views.py:52
+msgid "You are successfully registered."
+msgstr "Вы успешно зарегистрированы."
 
 #: .\categoryes\templates\categoryes\main.html:556
 #: .\main\templates\main\main.html:561 .\posts\templates\posts\main.html:559
@@ -157,15 +244,15 @@ msgstr "Электронная почта введена неправильно.
 msgid "ago"
 msgstr "назад"
 
-#: .\invilso_scripts\settings.py:261
+#: .\invilso_scripts\settings.py:264
 msgid "English"
-msgstr "Английский"
+msgstr "Английский язык"
 
-#: .\invilso_scripts\settings.py:262
+#: .\invilso_scripts\settings.py:265
 msgid "Russian"
 msgstr "Русский"
 
-#: .\invilso_scripts\settings.py:263
+#: .\invilso_scripts\settings.py:266
 msgid "Ukrainian"
 msgstr "Украинский"
 
@@ -183,11 +270,11 @@ msgstr "Мессенджер"
 
 #: .\messanger\templates\messanger\main.html:548
 msgid "Dialogs loaded"
-msgstr "Диалоги загружаются"
+msgstr "Загруженные диалоги"
 
 #: .\messanger\templates\messanger\main.html:556
 msgid "Choose a dialogue"
-msgstr "Выберите диалог"
+msgstr "Выбирать диалог"
 
 #: .\posts\templates\posts\main.html:569
 msgid "Buy for $"
@@ -203,83 +290,63 @@ msgstr "Комментарии"
 
 #: .\templates\base.html:10
 msgid "A place where I unload my public programs and offer them for sale."
-msgstr ""
-"Место, куда я загружаю свои публичные и не только программы а также продаю их"
+msgstr "Место, где я разгружаю свои общественные программы и предлагаю их на продажу."
 
 #: .\templates\base.html:11
 msgid ""
 "portfolio, development, sales, web development, programming, lua scripts, "
 "trinity, scripts, lua, samp, lingua, language, english, learn"
 msgstr ""
-"портфолио, разработка, продажи, веб-разработка, программирование, lua "
-"скрипты, тринити, скрипты, lua, samp, lingua, язык, английский, изучать, "
-"выучить, учить, гта"
+"портфолио, разработка, продажи, веб-разработка, программирование, скрипты "
+"lua, тринити, скрипты, lua, samp, лингва, язык, английский"
 
-#: .\templates\base.html:38
+#: .\templates\base.html:39
 msgid "Search"
 msgstr "Поиск"
 
-#: .\templates\base.html:56 .\templates\bg2.html:222
+#: .\templates\base.html:57 .\templates\bg2.html:222
 msgid "Messages"
 msgstr "Сообщения"
 
-#: .\templates\base.html:58 .\templates\bg2.html:219
+#: .\templates\base.html:59 .\templates\bg2.html:219
 msgid "Create post"
 msgstr "Создать пост"
 
-#: .\templates\base.html:80 .\templates\base.html:109
-#, fuzzy
-#| msgid "Surname"
-msgid "Username "
-msgstr "Имя пользователя"
-
-#: .\templates\base.html:120
-#, fuzzy
-#| msgid "Already have an account?"
-msgid "Create an account"
-msgstr "У вас уже есть аккаунт?"
-
-#: .\templates\base.html:134
-#, fuzzy
-#| msgid "Choose a dialogue"
-msgid "Choose Language"
-msgstr "Выберите диалог"
-
-#: .\templates\base.html:270 .\templates\bg2.html:123
+#: .\templates\bg2.html:123 .\templates\footer.html:9
 msgid "Other Services"
 msgstr "Другие сервисы"
 
-#: .\templates\base.html:273 .\templates\bg2.html:126
+#: .\templates\bg2.html:126 .\templates\footer.html:12
 msgid "About Us"
 msgstr "О нас"
 
-#: .\templates\base.html:286 .\templates\bg2.html:138
+#: .\templates\bg2.html:138 .\templates\footer.html:25
 msgid "Resources"
 msgstr "Ресурсы"
 
-#: .\templates\base.html:289 .\templates\bg2.html:142
+#: .\templates\bg2.html:142 .\templates\footer.html:28
 msgid "Privacy policy"
 msgstr "Политика конфиденциальности"
 
-#: .\templates\base.html:292 .\templates\bg2.html:143
+#: .\templates\bg2.html:143 .\templates\footer.html:31
 msgid "License agreement"
 msgstr "Лицензионное соглашение"
 
-#: .\templates\base.html:295 .\templates\bg2.html:144
+#: .\templates\bg2.html:144 .\templates\footer.html:34
 msgid "Consent to data processing"
 msgstr "Согласие на обработку данных"
 
-#: .\templates\base.html:298 .\templates\bg2.html:145
+#: .\templates\bg2.html:145 .\templates\footer.html:37
 msgid "Refund policy"
 msgstr "Политика возврата"
 
-#: .\templates\base.html:305 .\templates\bg2.html:154
+#: .\templates\bg2.html:154 .\templates\footer.html:44
 msgid "Contacts"
 msgstr "Контакты"
 
 #: .\templates\bg2.html:186
 msgid "Functional"
-msgstr "Функционал"
+msgstr "Функциональный"
 
 #: .\templates\bg2.html:187
 msgid "Theme"
@@ -295,11 +362,9 @@ msgstr "Профиль"
 
 #: .\templates\error.html:24
 msgid ""
-"An error has occurred on the server. Report it to any of the contacts listed "
-"below."
-msgstr ""
-"Произошла ошибка на сервере. Сообщите об этом любому из контактов, указанных "
-"ниже."
+"An error has occurred on the server. Report it to any of the contacts listed"
+" below."
+msgstr "На сервере произошла ошибка. Сообщите об этом любому из перечисленных ниже контактов."
 
 #: .\templates\error.html:25
 msgid "Specify the exact time when the error occurred."
@@ -308,3 +373,15 @@ msgstr "Укажите точное время возникновения оши
 #: .\templates\error.html:26
 msgid "Brief description of the error"
 msgstr "Краткое описание ошибки"
+
+#: .\templates\language_modal.html:7
+msgid "Choose Language"
+msgstr "Выбрать язык"
+
+#: .\templates\login_modal.html:15 .\templates\register_modal.html:16
+msgid "Username "
+msgstr "Имя пользователя "
+
+#: .\templates\register_modal.html:28
+msgid "Create an account"
+msgstr "Создавать учетную запись"

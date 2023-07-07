@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block title %}
-500 Internal Error
+Error
 {% endblock %}
 
 {% block head %}
@@ -20,7 +20,7 @@
 
 {% block content %}
 <div class="centered-text">
-<h1 class="h1" style="font-size: 250px;">500</h1>
+<h1 class="h1" style="font-size: 250px;">{{ status_code }}</h1>
 <h2>{% trans "An error has occurred on the server. Report it to any of the contacts listed below." %}</h2>
 <h3>{% trans "Specify the exact time when the error occurred." %}</h3>
 <h4>{% trans "Brief description of the error" %}: {{exception}}</h4>

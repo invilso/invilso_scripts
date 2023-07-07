@@ -36,6 +36,8 @@ LOGIN_REDIRECT_URL = '/'
 
 LIQPAY_PUBLIC_KEY = config.Payment.PUBLIC_KEY
 LIQPAY_PRIVATE_KEY = config.Payment.PRIVATE_KEY
+CLOUDFLARE_SECRET_KEY = config.Cloudflare.SECRET_KEY
+CLOUDFLARE_SITE_KEY = config.Cloudflare.SITE_KEY
 
 # Application definition
 
@@ -204,6 +206,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'invilso_scripts.context_processors.categories',
+                'invilso_scripts.context_processors.cf_site_key'
             ],
         },
     },
