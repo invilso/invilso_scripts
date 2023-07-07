@@ -48,7 +48,9 @@
         <div style='margin-top: 20pt;' class='col-md-3 justify-content-center'>
             {% if post.price > 0 %}
             <a href="" class="btn btn-warning">{% trans "Buy for $" %}{{post.price}}</a>
+            {% if request.user.is_staff %}
             <a class="btn btn-dark" href="{% url 'posts:graph' pk=post.pk%}">Statistic</a>
+            {% endif %}
             <br>
             <img src="{% static 'global/img/logo/visa.png' %}" alt="visa" width="35" height="30" style="margin-top: 10pt;">
             <img src="{% static 'global/img/logo/mastercard.png' %}" alt="mastercard" width="35" height="30" style="margin-left: 17px; margin-top: 10pt;">
