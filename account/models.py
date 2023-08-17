@@ -10,8 +10,8 @@ def validate_rating(value):
         raise ValidationError("The value should be between 1 and 5.")
 
 class Review(models.Model):
-    name = models.CharField(max_length=60)
-    task_description = models.CharField(max_length=60)
+    name = models.CharField(max_length=100)
+    task_description = models.CharField(max_length=150)
     review = models.TextField(blank=True)
     quality_of_service = models.PositiveIntegerField(default=3, validators=[validate_rating])
     adherence_to_deadlines = models.PositiveIntegerField(default=3, validators=[validate_rating])
