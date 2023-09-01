@@ -7,6 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}{% endblock %}</title>
         <meta name="robots" content="index, follow">
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K6NVF49P');</script>
+        <!-- End Google Tag Manager -->
         <meta name="description" content="{% trans "A place where I unload my public programs and offer them for sale." %}">
         <meta name="keywords" content="{% trans "portfolio, development, sales, web development, programming, lua scripts, trinity, scripts, lua, samp, lingua, language, english, learn" %}">
         <link rel="icon" href="{% static 'global/img/favicon.ico' %}">
@@ -17,6 +24,10 @@
         {% block head %} {% endblock %}
     </head>
     <body class="d-flex flex-column h-100">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6NVF49P"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
         {% comment %} <a href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi" class="em-ribbon" style="position: absolute; left:0; top:0; width: 30px; height: 30px; background: url('http://stfalcon.github.io/stopwar/img/stop-war-in-ukraine.png'); z-index: 2013; border: 0;" title="Do something to stop this war! Russians are killing our children and civilians!" target="_blank"></a> {% endcomment %}
         <nav class="navbar navbar-expand-lg bg-primary navbar-dark py-1 p-lg-0">
             <div class="container">
